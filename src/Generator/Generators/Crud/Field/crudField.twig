@@ -1,0 +1,73 @@
+<?php
+/**
+ * @Author Anton Boutkam
+ * @generated
+ */
+namespace {{ gen.getNamespace() }}\Field;
+
+use Crud\Field;
+use Exception\InvalidArgumentException;
+use Crud\{{ gen.getCrudinterface() }};
+use Crud\Generic\Field\{{ gen.getGenericType() }};
+use {{ gen.getModelObject() }} as ModelObject;
+use {{ gen.getModelObject() }}Query as QueryObject;
+use Core\Utils;
+
+class {{ gen.getClassName() }} extends {{ gen.getGenericType() }} implements {{ gen.getCrudinterface() }}{
+
+    protected $sFieldName = '{{ gen.getFieldname() }}';
+    protected $sFieldLabel = '{{ gen.getFieldlabel() }}';
+    protected $sIcon = '{{ gen.getFieldicon() }}';
+
+    function getFieldName()
+    {
+    	return $this->sFieldName;
+    }
+    function getDataType():string
+    {
+        return '{{ gen.getDatatype() }}';
+    }
+
+    function hasValidations() { return false; }
+    function validate($aPostedData)
+    {
+        $mResponse = false;
+        return $mResponse;
+    }
+{% if gen.getDatatype() == 'lookup' %}
+
+    function getLookups($mSelectedItem = null)
+    {
+        $aAllRows = QueryObject::create()->orderByName()->find();
+        $aOptions = Utils::makeSelectOptions($aAllRows, 'getName', $mSelectedItem);
+        return $aOptions;
+    }
+    function getVisibleValue($iItemId)
+    {
+        return QueryObject::create()->findOneById($iItemId)->getName();
+    }
+{% endif %}
+
+    /**
+    * @return string
+    * @throws \Twig_Error_Loader
+    * @throws \Twig_Error_Runtime
+    * @throws \Twig_Error_Syntax
+    */
+    function getOverviewHeader()
+    {
+        return $this->sortableHeaderField($this->getTranslatedTitle(), $this->sFieldName);
+    }
+    function getOverviewValue($oModelObject)
+    {
+        if(!$oModelObject instanceof ModelObject)
+        {
+            throw new InvalidArgumentException("Expected an instance of ModelObject in ".__METHOD__);
+        }
+        return '<td class="">'.$oModelObject->{{ gen.getGetter() }}().'</td>';
+    }
+    function getFieldTitle(){
+        return $this->getTranslatedTitle();
+    }
+
+}

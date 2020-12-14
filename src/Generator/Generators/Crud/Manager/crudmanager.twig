@@ -1,0 +1,91 @@
+<?php
+namespace {{ gen.getNamespace() }};
+
+use Crud\FormManager;
+use Crud\InterfaceConfigurableCrud;
+use Exception\LogicException;
+use {{ gen.getModelObject() }};
+use {{ gen.getModelObject() }}Query;
+{% if gen.getExposeApi() %}use Crud\InterfaceApiExposable;{% endif %}
+
+class Crud{{ gen.getBareManagerName() }}Manager extends FormManager implements InterfaceConfigurableCrud{% if gen.getExposeApi() %}, InterfaceApiExposable{% endif %}
+{
+
+{% if gen.getExposeApi() %}
+    function getShortDescription(): string
+    {
+        return '{{ gen.getExposeApiShortDesc() }}';
+    }
+
+{% endif %}
+    function getEntityTitle()
+    {
+        return '{{ gen.getOverviewTitle() }}';
+    }
+    function getOverviewUrl()
+    {
+        return '{{ gen.getOverviewUrl() }}';
+    }
+    function getCreateNewUrl()
+    {
+        return '{{ gen.getEditUrl() }}';
+    }
+    function getNewFormTitle(){
+        return '{{ gen.getNewTitle() }}';
+    }
+    function getEditFormTitle()
+    {
+        return '{{ gen.getEditTitle() }}';
+    }
+    function getDefaultOverviewFields()
+    {
+        return {{ gen.getFieldsAsArray()|raw }};
+    }
+    function getDefaultEditFields()
+    {
+        return {{ gen.getFieldsAsArrayEdit()|raw }};
+    }
+    function getModel($aData)
+    {
+        if(isset($aData['id']) && $aData['id'])
+        {
+            $o{{ gen.getBaseModelObject() }}Query = {{ gen.getBaseModelObject() }}Query::create();
+            $o{{ gen.getBaseModelObject() }} = $o{{ gen.getBaseModelObject() }}Query->findOneById($aData['id']);
+
+            if(!$o{{ gen.getBaseModelObject() }} instanceof {{ gen.getBaseModelObject() }})
+            {
+                throw new LogicException("Project should be an instance of {{ gen.getBaseModelObject() }} but got something else." . __METHOD__);
+            }
+            $o{{ gen.getBaseModelObject() }} = $this->fillVo($aData, $o{{ gen.getBaseModelObject() }});
+        }
+        else
+        {
+            $o{{ gen.getBaseModelObject() }} = new {{ gen.getBaseModelObject() }}();
+            if(!empty($aData))
+            {
+                $o{{ gen.getBaseModelObject() }} = $this->fillVo($aData, $o{{ gen.getBaseModelObject() }});
+            }
+        }
+        return $o{{ gen.getBaseModelObject() }};
+    }
+
+    /**
+     * @param $aData
+     * @return {{ gen.getBaseModelObject() }}
+     * @throws \Propel\Runtime\Exception\PropelException
+     */
+    function save($aData):{{ gen.getBaseModelObject() }}
+    {
+        $o{{ gen.getBaseModelObject() }} = $this->getModel($aData);
+        if($o{{ gen.getBaseModelObject() }} instanceof {{ gen.getBaseModelObject() }})
+        {
+            $o{{ gen.getBaseModelObject() }} = $this->fillVo($aData, $o{{ gen.getBaseModelObject() }});
+            $o{{ gen.getBaseModelObject() }}->save();
+        }
+        return $o{{ gen.getBaseModelObject() }};
+    }
+    private function fillVo($aData, {{ gen.getBaseModelObject() }} $oModel)
+    {
+        {{ gen.getFillVo()|raw }}
+    }
+}

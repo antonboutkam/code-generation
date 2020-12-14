@@ -1,0 +1,36 @@
+<script type="text/javascript">
+    RED.nodes.registerType('{{ action_label }} {{ code}}',{
+        category: '{{ titel }}',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "white-globe.png",
+        label: function() {
+            return "{{ action_label }}";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="{{ action_label }} {{ code}}">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Endpoint</label>
+        <select>
+            <option>aaa</option>
+            <option>bbb</option>
+        </select>
+    </div>
+</script>
+
+<script type="text/html" data-help-name="lower-case">
+    <p>
+        {{ titel }}
+        A simple node that converts the message payloads into all lower-case characters
+    </p>
+</script>

@@ -1,0 +1,55 @@
+{
+    "name" : "novum/code-generation",
+    "type" : "novum-core",
+    "minimum-stability": "dev",
+    "license": "MIT",
+    "prefer-stable": true,
+    "require": {
+        "PHP": "^7.4",
+        "hurah/util" : "*",
+        "symfony/finder": "^5.2",
+        "symfony/console": "^5.2",
+        "novum/innovation-app-core": "*",
+
+        "ext-dom": "*",
+        "ext-pdo": "*",
+        "ext-sockets": "*",
+        "ext-mysqli": "*",
+        "ext-json": "*",
+        "ext-gd": "*",
+        "ext-mbstring": "*",
+        "ext-curl": "*",
+        "ext-libxml": "*",
+        "ext-simplexml": "*",
+        "ext-intl" : "*",
+        "nette/php-generator": "^3.5",
+        "psr/log": "^1.1"
+
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.3@dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "GeneratorCommand\\" : "src/Generator/Command",
+            "Generator\\" : "src/Generator/Generators",
+            "GeneratorHelper\\" : "src/Generator/Helper",
+            "GeneratorUtil\\" : "src/Generator/Util"
+        }
+    },
+    "autoload-dev" : {
+        "psr-4": {
+            "Test\\": "tests"
+        }
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../util"
+        },
+        {
+            "type": "path",
+            "url": "../../data-types"
+        }
+    ]
+}
