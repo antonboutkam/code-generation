@@ -1076,16 +1076,16 @@
         },
         {
             "name": "hurah/data-types",
-            "version": "v1.0.3",
+            "version": "v1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/antonboutkam/data-types.git",
-                "reference": "dba628e94971057c52bb42fb74e133834fd86d3d"
+                "reference": "f44bd70f869cccc184dc2289d1024cdabdf767c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/antonboutkam/data-types/zipball/dba628e94971057c52bb42fb74e133834fd86d3d",
-                "reference": "dba628e94971057c52bb42fb74e133834fd86d3d",
+                "url": "https://api.github.com/repos/antonboutkam/data-types/zipball/f44bd70f869cccc184dc2289d1024cdabdf767c6",
+                "reference": "f44bd70f869cccc184dc2289d1024cdabdf767c6",
                 "shasum": ""
             },
             "require": {
@@ -1112,7 +1112,7 @@
                 }
             ],
             "description": "This is an arbitrary set of objects representing specific types of data.",
-            "time": "2020-12-09T11:04:10+00:00"
+            "time": "2020-12-14T16:23:06+00:00"
         },
         {
             "name": "hurah/util",
