@@ -1,5 +1,5 @@
 <?php
-namespace Generator\Admin\Module\Config;
+namespace Generator\Admin\Module\Menu\Item;
 
 use Hurah\Types\Type\Url;
 use Hurah\Types\Type\Icon;

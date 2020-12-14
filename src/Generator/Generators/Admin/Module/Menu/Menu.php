@@ -2,10 +2,10 @@
 
 namespace Generator\Admin\Module\Menu;
 
+use Generator\Admin\Module\Menu\Item\ItemConfigInterface;
+use Generator\Admin\Module\Menu\Item\Item;
 use Hurah\Types\Exception\InvalidArgumentException;
 use Symfony\Component\Console\Output\OutputInterface;
-use Generator\Admin\Module\Config\ItemConfigInterface;
-use Generator\Admin\Module\Config\MenuConfigInterface;
 use Hurah\Types\Type\Html\Element;
 use Hurah\Types\Type\Html\Link;
 use Hurah\Types\Type\Icon;

@@ -1,16 +1,14 @@
 <?php
 
-namespace Generator\Admin\Module\Config;
+namespace Generator\Admin\Module\Menu;
 
-use Core\DataType\PlainText;
-use Generator\Admin\Module\Menu\Item;
-use Generator\Admin\Module\Menu\ItemConfig;
 use Helper\Schema\Module;
-use Hurah\Types\Type\Html\MenuItemCollection;
 use Hurah\Types\Type\Icon;
 use Hurah\Types\Type\Path;
+use Hurah\Types\Type\PlainText;
+use Generator\Admin\Module\Menu\Item\ItemConfig;
 
-class ConfigMenu implements MenuConfigInterface {
+final class ConfigMenu implements MenuConfigInterface {
 
     private Icon $oIcon;
     private PlainText $oTitle;
@@ -40,18 +38,31 @@ class ConfigMenu implements MenuConfigInterface {
         // TODO: Implement location() method.
     }
 
-
-    public static function fromModule(Module $oModule):ConfigMenu
+    public static function create(PlainText $oTitle, Icon $oIcon, array $aMenuItemConfigs):self
     {
         $oConfigMenu = new self();
-        $oConfigMenu->oIcon = new Icon($oModule->getIcon());
-        $oConfigMenu->oTitle = new PlainText($oModule->getTitle());
-
+        $oConfigMenu->oIcon = $oIcon;
+        $oConfigMenu->oTitle = $oTitle;
+        $oConfigMenu->aMenuItemConfigs = $aMenuItemConfigs;
         foreach ($oModule->getTables() as $oTable)
         {
             $oConfigMenu->aMenuItemConfigs[] = ItemConfig::fromTable($oTable);
         }
         return $oConfigMenu;
+
+    }
+    public static function fromModule(Module $oModule):self
+    {
+        $aMenuItemConfigs = [];
+        foreach ($oModule->getTables() as $oTable)
+        {
+            $aMenuItemConfigs[] = ItemConfig::fromTable($oTable);
+        }
+        return self::create(
+            new Icon($oModule->getIcon()),
+            new PlainText($oModule->getTitle()),
+            $aMenuItemConfigs
+        );
     }
 
 }

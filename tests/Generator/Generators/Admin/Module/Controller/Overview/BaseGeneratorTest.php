@@ -1,6 +1,6 @@
 <?php
 
-namespace Test\Admin\Module\Controller\Overview\ControllerOverviewGenerator;
+namespace Test\Generator\Generators\Admin\Module\Controller\Overview;
 
 use Generator\Admin\Module\Controller\Overview\BaseGenerator;
 use Hurah\Types\Type;
@@ -20,11 +20,16 @@ class BaseGeneratorTest extends TestCase {
             Type\PhpNamespace::make('AdminModules', 'Custom', 'Anton', 'Test'),
             Type\PhpNamespace::make('AdminModules', 'Custom', 'Anton', 'Test', 'Base'),
             Type\PhpNamespace::make('Crud', 'Custom', 'Anton', 'Test'),
-            Type\PhpNamespace::make('Crud', 'Custom', 'Anton', 'Test', 'TestModuleQuery'),
+            Type\PhpNamespace::make('Model', 'Custom', 'Anton', 'Test', 'TestModuleQuery'),
             Type\PhpNamespace::make('Crud', 'Custom', 'Anton', 'Test', 'TestModule'),
-            Type\PhpNamespace::make('Crud', 'Custom', 'Anton', 'Test', 'TestModule'),
+            Type\PhpNamespace::make('Model', 'Custom', 'Anton', 'Test', 'TestModule'),
         );
         $oBaseGenerator = new BaseGenerator($oConfig, new ConsoleOutput());
-        echo $oBaseGenerator->generate();
+        $sGenerated = $oBaseGenerator->generate();
+
+        $this->assertTrue(strpos($sGenerated, '<?php') === 0);
+        $this->assertTrue(strpos($sGenerated, 'extends GenericOverviewController') > 0);
+        $this->assertTrue(strpos($sGenerated, 'class OverviewController') > 0);
+        $this->assertTrue(substr_count($sGenerated, '{') === substr_count($sGenerated, '}'));
     }
 }

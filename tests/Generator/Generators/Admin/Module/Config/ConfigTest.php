@@ -15,5 +15,7 @@ class ConfigTest extends TestCase {
         $oConfig = new Config(ConfigConfig::create('anton', 'Finance'), new ConsoleOutput());
         $this->assertTrue(strpos($oConfig->generate(), 'Translate::fromCode("Finance");') > 0);
         $this->assertTrue(strpos($oConfig->generate(), '<?php') === 0);
+
+        print_r(parse_url('/bla/die/da?x=y'));
     }
 }

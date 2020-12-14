@@ -1,6 +1,6 @@
 <?php
 
-namespace Generator\Admin\Module\Controller\Overview;
+namespace Generator\Admin\Module\Controller\Edit;
 
 use Nette\PhpGenerator\ClassType;
 use Nette\PhpGenerator\PhpNamespace;
@@ -24,9 +24,9 @@ class Generator {
         $oNamespace = new PhpNamespace($this->config->getNamespace());
         $oNamespace->addUse($this->config->getBaseNamespace());
 
-        $oClass = new ClassType('OverviewController');
+        $oClass = new ClassType('EditController');
         $oClass->setFinal(true);
-        $oClass->addExtend($this->config->getBaseNamespace() . '\\OverviewController');
+        $oClass->addExtend($this->config->getBaseNamespace() . '\\EditController');
 
         $oClass->setComment("Skeleton subclass for drawing a list of " . $this->config->getPhpName() . " records.");
         $oClass->addComment(str_repeat(PHP_EOL, 2));
@@ -35,6 +35,6 @@ class Generator {
         $oClass->addComment("long as it does not already exist in the output directory.");
 
         $oNamespace->add($oClass);
-        return '<?php' . PHP_EOL .  (string) $oNamespace;
+        return '<?php' . PHP_EOL . $oNamespace;
     }
 }

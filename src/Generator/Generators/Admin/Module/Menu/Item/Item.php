@@ -1,8 +1,7 @@
 <?php
 
-namespace Generator\Admin\Module\Menu;
+namespace Generator\Admin\Module\Menu\Item;
 
-use Generator\Admin\Module\Config\ItemConfigInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Hurah\Types\Type\Html\MenuItem;
 use Hurah\Types\Type\Icon;

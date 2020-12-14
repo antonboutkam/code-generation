@@ -1,11 +1,11 @@
-<?php /*** @unfixed* */
+<?php
 
-namespace Generator\Admin\Module\Config;
+namespace Generator\Admin\Module\Menu;
 
-use Core\DataType\PlainText;
-use Generator\Admin\Module\Menu\ItemConfig;
 use Hurah\Types\Type\Icon;
 use Hurah\Types\Type\Path;
+use Hurah\Types\Type\PlainText;
+use Generator\Admin\Module\Menu\Item\ItemConfig;
 
 interface MenuConfigInterface {
 
