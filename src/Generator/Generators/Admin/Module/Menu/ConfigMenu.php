@@ -15,6 +15,13 @@ final class ConfigMenu implements MenuConfigInterface {
     private array $aMenuItemConfigs = [];
 
 
+    public function count() : int{
+        return count($this->aMenuItemConfigs);
+    }
+    public function isEmpty(): bool {
+        return $this->count() > 0;
+    }
+
     public function getIcon(): Icon {
         return $this->oIcon;
     }
@@ -44,10 +51,6 @@ final class ConfigMenu implements MenuConfigInterface {
         $oConfigMenu->oIcon = $oIcon;
         $oConfigMenu->oTitle = $oTitle;
         $oConfigMenu->aMenuItemConfigs = $aMenuItemConfigs;
-        foreach ($oModule->getTables() as $oTable)
-        {
-            $oConfigMenu->aMenuItemConfigs[] = ItemConfig::fromTable($oTable);
-        }
         return $oConfigMenu;
 
     }
@@ -59,8 +62,8 @@ final class ConfigMenu implements MenuConfigInterface {
             $aMenuItemConfigs[] = ItemConfig::fromTable($oTable);
         }
         return self::create(
-            new Icon($oModule->getIcon()),
             new PlainText($oModule->getTitle()),
+            new Icon($oModule->getIcon()),
             $aMenuItemConfigs
         );
     }

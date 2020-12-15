@@ -20,6 +20,8 @@ interface MenuConfigInterface {
      */
     public function getMenu(): array;
 
+    public function isEmpty() : bool;
+    public function count() : int;
     public function location(): Path;
     /*
     public function getCustom(): string;

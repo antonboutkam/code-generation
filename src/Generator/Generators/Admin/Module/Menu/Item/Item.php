@@ -14,26 +14,14 @@ final class Item {
         $this->output = $oOutput;
     }
 
-    private function getIcon(): Icon {
-        return $this->config->getIcon();
-    }
-
-    private function getUrl(): Url {
-        return $this->config->getUrl();
-    }
-
-    private function getTitle(): PlainText {
-        return $this->getTitle();
-    }
-
     /**
      * @return string
      * @throws \Hurah\Types\Exception\InvalidArgumentException
      */
     public function generate(): MenuItem {
         // Tells Twig that this string is translatable.
-        $sTitle = "{{ {$this->getTitle()}|translate }}";
-        return MenuItem::create($this->getUrl(), $this->getIcon(), $sTitle);
+        $sTitle = "{{ {$this->config->getTitle()}|translate }}";
+        return MenuItem::create($this->config->getUrl(), $this->config->getIcon(), $sTitle);
     }
 
 }

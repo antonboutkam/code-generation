@@ -5,15 +5,15 @@ namespace Generator\Admin\Module\Menu;
 use Generator\Admin\Module\Menu\Item\ItemConfigInterface;
 use Generator\Admin\Module\Menu\Item\Item;
 use Hurah\Types\Exception\InvalidArgumentException;
+use Hurah\Types\Type\Html\IElementizable;
 use Symfony\Component\Console\Output\OutputInterface;
 use Hurah\Types\Type\Html\Element;
 use Hurah\Types\Type\Html\Link;
-use Hurah\Types\Type\Icon;
 use Hurah\Types\Type\Path;
 use Hurah\Types\Type\PlainText;
 use Hurah\Types\Type\Url;
 
-final class Menu {
+final class Menu implements IElementizable {
     private MenuConfigInterface $config;
     private OutputInterface $output;
 
@@ -26,9 +26,6 @@ final class Menu {
         return $this->config->location();
     }
 
-    private function getIcon(): Icon {
-        return $this->config->getIcon();
-    }
 
     /**
      * @return ItemConfigInterface[]
@@ -38,11 +35,11 @@ final class Menu {
     }
 
     private function hasSubmenu(): bool {
-        return $this->hasSubmenu();
+        return count($this->getMenu()) > 0;
     }
 
     private function getTitle(): PlainText {
-        return $this->getTitle();
+        return $this->config->getTitle();
     }
 
     private function getTranslatingTitle(): PlainText {
@@ -50,20 +47,43 @@ final class Menu {
     }
 
     /**
-     * @return string
+     * @return Element
      * @throws InvalidArgumentException
      */
-    public function generate(): string {
+    public function toElement():Element
+    {
+        $oElement = new Element('li');
         if (!$this->hasSubmenu()) {
-            return '';
+            return $oElement;
         }
 
-        $oElement = (new Element('li'))->addChild(Link::create(new Url('#'))->addClass('accordion-toggle {{ menu_state }}')->setId('module_{{ module_name }}')->addChild($this->getIcon())->addChild(Element::create('span')->addClass('sidebar-title')->addHtml($this->getTranslatingTitle()))->addChild(Element::create('span')->addClass('caret')));
+        $oElement
+            ->addChild(
+                Link::create(new Url('#'))
+                    ->addClass('accordion-toggle {{ menu_state }}')
+                    ->setId('module_{{ module_name }}')
+                    ->addChild($this->config->getIcon())
+                        ->addChild(Element::create('span')
+                            ->addClass('sidebar-title')
+                            ->addHtml($this->getTranslatingTitle())
+                        )
+                    ->addChild(
+                        Element::create('span')
+                        ->addClass('caret'))
+                    );
 
         foreach ($this->getMenu() as $oItemConfig) {
             $oItem = new Item($oItemConfig, $this->output);
             $oElement->addChild($oItem->generate());
         }
         return $oElement;
+    }
+    /**
+     * @return string
+     * @throws InvalidArgumentException
+     */
+    public function generate(): string {
+
+        return "{$this->toElement()}";
     }
 }

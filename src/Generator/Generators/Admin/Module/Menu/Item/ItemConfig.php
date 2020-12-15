@@ -38,7 +38,6 @@ final class ItemConfig implements ItemConfigInterface {
     {
         $sCustom = (string)$oTable->getDatabase()->getCustom();
         $oModule = $oTable->getModule();
-        Util::location()
 
         if (empty($sCustom)) {
             $sUrl = strtolower('/' . $oModule->getModuleDir() . '/' . $oTable->getName() . '/overview');
