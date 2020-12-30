@@ -17,8 +17,14 @@ use Symfony\Component\Console\Output\ConsoleOutput;
 class GeneratorTest extends TestCase
 {
 
-    public function testGenerate() {
-        $oConfig = $this->getConfigObject();
+    public function testGenerate1() {
+        $oConfig = $this->getConfigObject1();
+        $oGenerator = new Generator($oConfig, new ArrayInput([]), new ConsoleOutput());
+        $oGenerator->generate();
+    }
+
+    public function testGenerate2() {
+        $oConfig = $this->getConfigObject1();
         $oGenerator = new Generator($oConfig, new ArrayInput([]), new ConsoleOutput());
         $oGenerator->generate();
     }
@@ -29,7 +35,39 @@ class GeneratorTest extends TestCase
      * @throws \Hurah\Types\Exception\RuntimeException
      * @throws \ReflectionException
      */
-    private function getConfigObject(): Config {
+    private function getConfigObject1(): Config {
+        return Config::create(
+            new PlainText('test:command'),
+            new PlainText('Test command description'),
+            new PlainText('Test command help'),
+            PhpNamespace::make('Generator', 'Generators', 'This', 'Is', 'Some', 'SomeWorker'),
+            PhpNamespace::make('Generator', 'Generators', 'This', 'Is', 'Some', 'SomeConfig'),
+            PhpNamespace::make('Generator', 'Generators', 'This', 'Is', 'Some', 'SomeCommand'),
+            PhpNamespace::make('Generator', 'Generators', 'This', 'Is', 'Some', 'SomeInterface'),
+            PhpNamespace::make('Test', 'Generator', 'Generators', 'This', 'Is', 'Some', 'Test'),
+            (new PropertyCollection(
+                [
+                    Property::create([
+                        'name' => 'serverName',
+                        'type' => DnsName::class,
+                    ]),
+                    Property::create([
+                        'name' => 'createHostsLocal',
+                        'type' => PrimitiveBool::class
+                    ]),
+                ])
+            )
+        );
+    }
+
+
+    /**
+     * @return Config
+     * @throws \Hurah\Types\Exception\InvalidArgumentException
+     * @throws \Hurah\Types\Exception\RuntimeException
+     * @throws \ReflectionException
+     */
+    private function getConfigObject2(): Config {
         return Config::create(
             new PlainText('test:command'),
             new PlainText('Test command description'),
@@ -48,6 +86,7 @@ class GeneratorTest extends TestCase
                     Property::create([
                         'name' => 'createHostsLocal',
                         'type' => PrimitiveBool::class,
+                        'default' => true
                     ]),
                 ])
             )

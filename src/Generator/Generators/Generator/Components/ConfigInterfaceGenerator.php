@@ -4,13 +4,14 @@ namespace Generator\Generators\Generator\Components;
 
 use Generator\Generators\Generator\ConfigInterface;
 use Generator\Generators\GeneratorInterface;
+use Hurah\Types\Type\Php\IsVoid;
 use Nette\PhpGenerator\ClassType;
 use Nette\PhpGenerator\Literal;
 use Nette\PhpGenerator\PhpNamespace;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-final class ConfigInterfaceGenerator implements GeneratorInterface
+final class ConfigInterfaceGenerator extends AbstractConfigGenerator implements GeneratorInterface
 {
 
     private ConfigInterface $oConfig;
@@ -31,19 +32,33 @@ final class ConfigInterfaceGenerator implements GeneratorInterface
         $oInterface->setInterface();
         $oNamespace->addUse(OutputInterface::class);
         $this->addUseStatements($oNamespace, $this->oConfig);
+        $this->addCreateMethod($oInterface, $this->oConfig);
         $this->addGetters($oInterface, $this->oConfig);
 
-        $oCreateMethod = $oInterface->addMethod('create');
-        $oCreateMethod->setReturnType(new Literal('self'));
         $oNamespace->add($oInterface);
 
         return $oNamespace;
+    }
+    private function addCreateMethod(ClassType $oInterface, ConfigInterface $oConfig)
+    {
+        $oCreateMethod = $oInterface->addMethod('create');
+        $oCreateMethod->setReturnType(new Literal('self'));
+        $oCreateMethod->setStatic();
+
+        foreach ($oConfig->getProperties() as $oConfigProperty) {
+            $mDefaultValue = new IsVoid();
+            if ($oConfigProperty->hasDefault()) {
+                $mDefaultValue = $this->formatDefaultValue($oConfigProperty);
+            }
+
+            $oNetteProperty = $oCreateMethod->addParameter($oConfigProperty->getName(), $mDefaultValue);
+            $oNetteProperty->setType($oConfigProperty->getType());
+        }
     }
     private function addGetters(ClassType $oInterface, ConfigInterface $oConfig) {
         foreach ($oConfig->getProperties() as $property)
         {
             $sMethod = 'get' . ucfirst($property->getName());
-            echo "Add public method {$sMethod}" . PHP_EOL;
             $classProperty = $oInterface->addMethod($sMethod);
             $classProperty->setPublic();
             $classProperty->setReturnType($property->getType());

@@ -4,13 +4,12 @@ namespace Generator\Generators\Admin\Module\Config;
 
 
 use Generator\Generators\Admin\Module\Util;
-use Generator\Generators\CliCommandInterface;
 use Generator\Generators\GeneratorInterface;
 use Helper\Schema\Table;
 use Hurah\Types\Type\Path;
 use Hurah\Types\Type\PhpNamespace as PhpNamespaceType;
 
-class ConfigConfig implements ConfigConfigInterface, CliCommandInterface, GeneratorInterface {
+class ConfigConfig implements ConfigConfigInterface, GeneratorInterface {
 
 
     private string $sCustom;
