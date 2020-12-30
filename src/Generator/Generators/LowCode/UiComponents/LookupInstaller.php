@@ -1,22 +1,18 @@
-<?php/*** @unfixed**/
+<?php
 
-namespace Generator\LowCode\UiComponents\LookupInstaller;
+namespace Generator\Generators\LowCode\UiComponents;
 
-use Cli\Tools\CommandUtils;
-use Core\Reflector;
 use Core\Utils;
-use Hi\Helpers\DirectoryStructure;
+use Generator\Generators\Domain\DirectoryStructure;
 use LowCode\ComponentFactory;
 use Model\System\DataModel\Model\DataModel;
 use Model\System\DataModel\Model\DataModelQuery;
 use Propel\Runtime\ActiveRecord\ActiveRecordInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class LookupInstaller
-{
+class LookupInstaller {
 
-    public static function install(array $aAnswers, OutputInterface $output)
-    {
+    public static function install(array $aAnswers, OutputInterface $output) {
         $oDirectoryStructure = new DirectoryStructure();
         require_once Utils::makePath($oDirectoryStructure->getVendorDir(), 'autoload.php');
         require_once Utils::makePath($oDirectoryStructure->getConfigRoot(), $aAnswers['config_dir'], 'propel', 'config.php');

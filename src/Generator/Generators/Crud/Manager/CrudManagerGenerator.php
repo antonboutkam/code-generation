@@ -1,6 +1,6 @@
-<?php/*** @unfixed**/
+<?php
 
-namespace Generator\Crud\Manager\CrudManagerGenerator;
+namespace Generator\Generators\Crud\Manager;
 
 use Cli\Tools\CommandUtils;
 use Core\DataType\Date;
@@ -21,12 +21,11 @@ use Propel\Runtime\ActiveQuery\ModelCriteria;
 use Propel\Runtime\Map\TableMap;
 use Symfony\Component\Console\Output\OutputInterface;
 
-final class CrudManagerGenerator extends BaseGenerator
+final class CrudManagerGenerator
 {
 
     public function __construct(OutputInterface $oOutput = null)
     {
-        parent::__construct($oOutput);
     }
 
     public function create(Table $oTable, Api $oApi = null)

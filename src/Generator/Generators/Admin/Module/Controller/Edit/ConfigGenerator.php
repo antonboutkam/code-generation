@@ -1,8 +1,8 @@
 <?php
 
-namespace Generator\Admin\Module\Controller\Edit;
+namespace Generator\Generators\Admin\Module\Controller\Edit;
 
-use Generator\Admin\Module\Util;
+use Generator\Generators\Admin\Module\Util;
 use Helper\Schema\Table;
 use Hurah\Types\Type\PhpNamespace;
 use Hurah\Types\Type\PlainText;

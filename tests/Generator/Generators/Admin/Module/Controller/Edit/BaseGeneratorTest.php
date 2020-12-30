@@ -2,8 +2,8 @@
 
 namespace Test\Generator\Generators\Admin\Module\Controller\Edit;
 
-use Generator\Admin\Module\Controller\Edit\BaseGenerator;
-use Generator\Admin\Module\Controller\Edit\ConfigGenerator;
+use Generator\Generators\Admin\Module\Controller\Edit\BaseGenerator;
+use Generator\Generators\Admin\Module\Controller\Edit\ConfigGenerator;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Output\ConsoleOutput;
 use Hurah\Types\Type;

@@ -1,12 +1,12 @@
 <?php
 
-namespace Generator\Admin\Module\Menu;
+namespace Generator\Generators\Admin\Module\Menu;
 
 use Helper\Schema\Module;
 use Hurah\Types\Type\Icon;
 use Hurah\Types\Type\Path;
 use Hurah\Types\Type\PlainText;
-use Generator\Admin\Module\Menu\Item\ItemConfig;
+use Generator\Generators\Admin\Module\Menu\Item\ItemConfig;
 
 final class ConfigMenu implements MenuConfigInterface {
 

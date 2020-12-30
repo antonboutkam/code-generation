@@ -1,6 +1,6 @@
 <?php
 
-namespace Generator\Admin\Module\Menu\Item;
+namespace Generator\Generators\Admin\Module\Menu\Item;
 
 use Symfony\Component\Console\Output\OutputInterface;
 use Hurah\Types\Type\Html\MenuItem;

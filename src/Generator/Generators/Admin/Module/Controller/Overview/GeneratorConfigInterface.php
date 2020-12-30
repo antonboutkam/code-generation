@@ -1,11 +1,11 @@
 <?php
 
-namespace Generator\Admin\Module\Controller\Overview;
+namespace Generator\Generators\Admin\Module\Controller\Overview;
 
 use Hurah\Types\Type\PlainText;
 use Hurah\Types\Type\PhpNamespace;
 
-interface GeneratorConfigInterface {
+interface   GeneratorConfigInterface {
 
     public function getTitle():string;
     public function getPhpName():string;

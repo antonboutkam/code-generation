@@ -1,6 +1,6 @@
 <?php
 
-namespace Generator\Admin\Module\Controller\Edit;
+namespace Generator\Generators\Admin\Module\Controller\Edit;
 
 use AdminModules\GenericEditController;
 use Crud\FormManager;

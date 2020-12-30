@@ -1,8 +1,7 @@
-<?php/*** @unfixed**/
+<?php
 
-namespace Generator\Crud\CrudsFromSchema;
+namespace Generator\Generators\Crud;
 
-use Cli\Tools\CommandUtils;
 use DOMDocument;
 use Exception\LogicException;
 use Helper\ApiXsd\Schema\Api;
@@ -10,7 +9,7 @@ use Helper\Schema\Database;
 use Hi\Helpers\DirectoryStructure;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class CrudsFromSchema extends BaseGenerator
+class CrudsFromSchema
 {
     private string $schemaLocation;
 

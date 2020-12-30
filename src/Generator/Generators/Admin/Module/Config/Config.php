@@ -1,22 +1,25 @@
 <?php
 
-namespace Generator\Admin\Module\Config;
+namespace Generator\Generators\Admin\Module\Config;
 
 use AdminModules\ModuleConfig;
 use Core\DataType\PlainText;
 use Core\Translate;
-use Generator\Fragment\Php;
+use Generator\Generators\Fragment\Php;
 use Nette\PhpGenerator\ClassType;
 use Nette\PhpGenerator\PhpNamespace;
+use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 final class Config {
 
     private ConfigConfigInterface $config;
     private OutputInterface $output;
+    private InputInterface $input;
 
-    public function __construct(ConfigConfigInterface $config, OutputInterface $oOutput) {
+    public function __construct(ConfigConfigInterface $config, InputInterface $oInput, OutputInterface $oOutput) {
         $this->config = $config;
+        $this->input = $oInput;
         $this->output = $oOutput;
     }
 

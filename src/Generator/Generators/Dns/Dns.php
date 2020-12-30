@@ -1,6 +1,6 @@
-<?php/*** @unfixed**/
+<?php
 
-namespace Generator\Dns\Dns;
+namespace Generator\Generators\Dns;
 
 use Cli\Tools\VO\SystemBuildConfig;
 use Core\Environment;

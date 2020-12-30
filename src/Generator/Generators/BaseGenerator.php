@@ -1,5 +1,5 @@
 <?php
-namespace Generator;
+namespace Generator\Generators;
 
 use Hurah\Types\Type\Path;
 use Core\DataType\PlainText;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Generator\Admin\Module;
+namespace Generator\Generators\Admin\Module;
 
 use Hurah\Types\Type\Url;
 use Hurah\Types\Type\Path;

@@ -1,9 +1,9 @@
-<?php/*** @unfixed**/
+<?php
 
-namespace Generator\Build\BuildStructure;
+namespace Generator\Generators\Build;
 
-use Generator\IBuildFolderOwner;
-use Generator\IPropelConfigBuildVo;
+use Generator\Generators\IBuildFolderOwner;
+use Generator\Generators\IPropelConfigBuildVo;
 use Cli\Tools\VO\SystemBuildConfig;
 use Core\InlineTemplate;
 use Exception\LogicException;

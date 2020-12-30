@@ -1,5 +1,5 @@
 <?php
-namespace Generator;
+namespace Generator\Generators;
 
 interface InputInterface {
 

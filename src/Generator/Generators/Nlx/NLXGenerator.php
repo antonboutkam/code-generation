@@ -1,6 +1,6 @@
-<?php/*** @unfixed**/
+<?php
 
-namespace Generator\Nlx\NLXGenerator;
+namespace Generator\Generators\Nlx;
 
 use Cli\Tools\CommandUtils;
 use Core\Logger;

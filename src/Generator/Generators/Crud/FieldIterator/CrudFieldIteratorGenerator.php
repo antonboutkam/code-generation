@@ -1,6 +1,6 @@
-<?php/*** @unfixed**/
+<?php
 
-namespace Generator\Crud\FieldIterator\CrudFieldIteratorGenerator;
+namespace Generator\Generators\Crud\FieldIterator;
 
 use Cli\CodeGen\Helpers\Crud;
 use Core\DataType\PhpNamespace as PhpNamespaceType;
@@ -13,7 +13,7 @@ use Nette\PhpGenerator\Literal;
 use Nette\PhpGenerator\PhpNamespace;
 use Symfony\Component\Console\Output\OutputInterface;
 
-final class CrudFieldIteratorGenerator extends BaseGenerator
+final class CrudFieldIteratorGenerator
 {
     public const GENERATED_CLASS_NAME = 'FieldIterator';
 

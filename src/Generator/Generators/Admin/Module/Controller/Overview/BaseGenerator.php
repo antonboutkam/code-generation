@@ -1,6 +1,6 @@
 <?php
 
-namespace Generator\Admin\Module\Controller\Overview;
+namespace Generator\Generators\Admin\Module\Controller\Overview;
 
 use AdminModules\GenericOverviewController;
 use Core\LogActivity;

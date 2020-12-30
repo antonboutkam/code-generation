@@ -1,6 +1,6 @@
 <?php
 
-namespace Generator\Admin\Module\Controller\Edit;
+namespace Generator\Generators\Admin\Module\Controller\Edit;
 
 use Hurah\Types\Type\PlainText;
 use Hurah\Types\Type\PhpNamespace;

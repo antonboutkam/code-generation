@@ -1,12 +1,12 @@
-<?php/*** @unfixed**/
+<?php
 
-namespace Generator\Crud\DirectoryStructure;
+namespace Generator\Generators\Crud;
 
 use Cli\Tools\CommandUtils;
 use Helper\Schema\Table;
 use Symfony\Component\Console\Output\OutputInterface;
 
-final class DirectoryStructure extends BaseGenerator
+final class DirectoryStructure
 {
 
     public function __construct(OutputInterface $oOutput = null)

@@ -1,6 +1,6 @@
-<?php/*** @unfixed**/
+<?php
 
-namespace Generator\Crud\Field\CrudFieldGenerator;
+namespace Generator\Generators\Crud\Field;
 
 use Cli\Tools\CommandUtils;
 use Core\DeferredAction;
@@ -47,11 +47,10 @@ use Nette\PhpGenerator\PhpNamespace;
 use Symfony\Component\Console\Output\OutputInterface;
 use Ui\Form\Field\Dynamic\Helper\LookupGeneratorFactory;
 
-final class CrudFieldGenerator extends BaseGenerator
+final class CrudFieldGenerator
 {
     public function __construct(OutputInterface $oOutput = null)
     {
-        parent::__construct($oOutput);
     }
 
     private function getBaseClassNamespace(Table $oTable): string

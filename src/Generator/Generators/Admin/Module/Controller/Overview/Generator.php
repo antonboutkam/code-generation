@@ -1,12 +1,13 @@
 <?php
 
-namespace Generator\Admin\Module\Controller\Overview;
+namespace Generator\Generators\Admin\Module\Controller\Overview;
 
+use Generator\Generators\GeneratorInterface;
 use Nette\PhpGenerator\ClassType;
 use Nette\PhpGenerator\PhpNamespace;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class Generator {
+class Generator implements GeneratorInterface{
 
     private GeneratorConfigInterface $config;
     private OutputInterface $output;

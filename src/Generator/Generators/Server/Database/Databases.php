@@ -1,6 +1,6 @@
-<?php/*** @unfixed**/
+<?php
 
-namespace Generator\Server\Database\Databases;
+namespace Generator\Generators\Server\Database;
 
 use Cli\Tools\VO\SystemBuildConfig;
 use Core\Environment;

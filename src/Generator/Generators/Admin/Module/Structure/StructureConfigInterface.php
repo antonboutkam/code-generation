@@ -1,13 +1,13 @@
-<?php /*** @unfixed* */
+<?php
+namespace Generator\Generators\Admin\Module\Structure;
 
-namespace Generator\Admin\Module\Structure;
-
-use Core\DataType\Path;
+use Hurah\Types\Type\Path;
 
 
 interface StructureConfigInterface {
 
     public function getInstallRoot():Path;
-    public function getModuleModels():array;
+    public function getModuleSections():array;
+
 
 }

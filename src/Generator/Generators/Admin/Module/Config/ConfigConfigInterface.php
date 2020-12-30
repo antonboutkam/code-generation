@@ -1,9 +1,9 @@
 <?php /*** @unfixed* */
 
-namespace Generator\Admin\Module\Config;
+namespace Generator\Generators\Admin\Module\Config;
 
-use Generator\BaseGeneratorConfig;
-use Generator\InputInterface;
+use Generator\Generators\BaseGeneratorConfig;
+use Generator\Generators\InputInterface;
 use Helper\Schema\Table;
 use Hurah\Types\Type\Path;
 use Hurah\Types\Type\PhpNamespace as PhpNamespaceType;

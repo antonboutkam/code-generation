@@ -1,9 +1,10 @@
 <?php
 
-namespace Generator\Admin\Module\Menu;
+namespace Generator\Generators\Admin\Module\Menu;
 
-use Generator\Admin\Module\Menu\Item\ItemConfigInterface;
-use Generator\Admin\Module\Menu\Item\Item;
+use Generator\Generators\Admin\Module\Menu\Item\ItemConfigInterface;
+use Generator\Generators\Admin\Module\Menu\Item\Item;
+use Generator\Generators\GeneratorInterface;
 use Hurah\Types\Exception\InvalidArgumentException;
 use Hurah\Types\Type\Html\IElementizable;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -13,7 +14,7 @@ use Hurah\Types\Type\Path;
 use Hurah\Types\Type\PlainText;
 use Hurah\Types\Type\Url;
 
-final class Menu implements IElementizable {
+final class Menu implements IElementizable, GeneratorInterface {
     private MenuConfigInterface $config;
     private OutputInterface $output;
 

@@ -1,6 +1,6 @@
-<?php/*** @unfixed**/
+<?php
 
-namespace Generator\Server\Http\Vhosts;
+namespace Generator\Generators\Server\Http;
 
 use Cli\Tools\VO\SystemBuildConfig;
 use Core\Environment;

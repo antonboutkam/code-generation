@@ -1,6 +1,6 @@
-<?php/*** @unfixed**/
+<?php
 
-namespace Generator\Composer\RegisterNamespace;
+namespace Generator\Generators\Composer;
 
 use Cli\Tools\VO\SystemBuildConfig;
 use Core\InlineTemplate;

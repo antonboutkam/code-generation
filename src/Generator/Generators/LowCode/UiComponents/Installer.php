@@ -1,6 +1,6 @@
-<?php/*** @unfixed**/
+<?php
 
-namespace Generator\LowCode\UiComponents\Installer;
+namespace Generator\Generators\LowCode\UiComponents;
 
 use Cli\Composer\Database\Helper\Propel;
 use Core\Cfg;

@@ -1,8 +1,8 @@
 <?php
 
-namespace Generator\Admin\Module\Menu\Item;
+namespace Generator\Generators\Admin\Module\Menu\Item;
 
-use Generator\Admin\Module\Util;
+use Generator\Generators\Admin\Module\Util;
 use Helper\Schema\Table;
 use Hurah\Types\Type\Url;
 use Hurah\Types\Type\PlainText;

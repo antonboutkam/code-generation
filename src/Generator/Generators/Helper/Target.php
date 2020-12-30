@@ -1,6 +1,6 @@
-<?php/*** @unfixed**/
+<?php
 
-namespace Generator\Helper\Target;
+namespace Generator\Generators\Helper;
 
 use Core\DataType\Path;
 use Core\Utils;

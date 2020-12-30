@@ -1,14 +1,14 @@
 <?php
 
-namespace Generator\Admin\Module\Structure;
+namespace Generator\Generators\Admin\Module\Structure;
 
 use Hurah\Types\Type\Path;
-use Generator\Admin\Module\Util;
+use Generator\Generators\Admin\Module\Util;
 use Helper\Schema\Module;
 
 class ConfigStructure implements StructureConfigInterface {
 
-    private array $aModels = [];
+    private array $aModuleSections = [];
     private Path $oInstallRoot;
 
     /**
@@ -21,18 +21,31 @@ class ConfigStructure implements StructureConfigInterface {
     /**
      * @return string[]
      */
-    public function getModuleModels(): array {
-        return $this->aModels;
+    public function getModuleSections(): array {
+        return $this->aModuleSections;
     }
 
-    public function fromModule(Module $oModule)
+    /**
+     * @param Path $oRootPath
+     * @param array $aSections
+     * @return static
+     */
+    public static function create(Path $oRootPath, array $aSections):self{
+        $oConfigStructure = new Config();
+        $oConfigStructure->aModuleSections = $aSections;
+        $oConfigStructure->oInstallRoot = $oRootPath;
+        return $oConfigStructure;
+    }
+    public static function fromModule(Module $oModule)
     {
-        $this->oInstallRoot = Util::location($oModule->getDatabase()->getCustom(), $oModule->getName());
+        $oInstallRoot = Util::location($oModule->getDatabase()->getCustom(), $oModule->getName());
 
+        $aModuleSections = [];
         foreach($oModule->getTables() as $oTable)
         {
-            $this->aModels[] = ucfirst($oTable->getName());
+            $aModuleSections[] = ucfirst($oTable->getName());
         }
+        return self::create($oInstallRoot, $aModuleSections);
 
     }
 }

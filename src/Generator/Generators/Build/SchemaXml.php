@@ -1,6 +1,6 @@
-<?php/*** @unfixed**/
+<?php
 
-namespace Generator\Build\SchemaXml;
+namespace Generator\Generators\Build;
 
 use Cli\Tools\VO\Contracts\ISchemaVo;
 use Core\DataType\PhpNamespace;

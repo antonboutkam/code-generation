@@ -1,6 +1,6 @@
-<?php/*** @unfixed**/
+<?php
 
-namespace Generator\LowCode\Nodered\GenerateDatasources;
+namespace Generator\Generators\LowCode\Nodered;
 
 use Cli\Tools\CommandUtils;
 use Core\InlineTemplate;

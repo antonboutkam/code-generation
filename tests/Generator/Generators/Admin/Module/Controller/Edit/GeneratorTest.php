@@ -2,10 +2,10 @@
 
 namespace Test\Generator\Generators\Admin\Module\Controller\Edit;
 
-use Generator\Admin\Module\Controller\Overview\Generator;
+use Generator\Generators\Admin\Module\Controller\Overview\Generator;
 use Hurah\Types\Type;
 
-use Generator\Admin\Module\Controller\Overview\ConfigGenerator;
+use Generator\Generators\Admin\Module\Controller\Overview\ConfigGenerator;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Output\ConsoleOutput;
 

@@ -1,14 +1,17 @@
 <?php
 
-namespace Generator\Admin\Module\Config;
+namespace Generator\Generators\Admin\Module\Config;
 
 
-use Generator\Admin\Module\Util;
+use Generator\Generators\Admin\Module\Util;
+use Generator\Generators\CliCommandInterface;
+use Generator\Generators\GeneratorInterface;
 use Helper\Schema\Table;
 use Hurah\Types\Type\Path;
 use Hurah\Types\Type\PhpNamespace as PhpNamespaceType;
 
-class ConfigConfig implements ConfigConfigInterface {
+class ConfigConfig implements ConfigConfigInterface, CliCommandInterface, GeneratorInterface {
+
 
     private string $sCustom;
     private string $sModule;
@@ -19,7 +22,6 @@ class ConfigConfig implements ConfigConfigInterface {
         $ConfigConfig->sModule = $sModuleName;
         return $ConfigConfig;
     }
-
     public static function fromTable(Table $oTable) {
         $ConfigConfig = new ConfigConfig();
         $ConfigConfig->sCustom = (string) $oTable->getDatabase()->getCustom();
@@ -37,5 +39,9 @@ class ConfigConfig implements ConfigConfigInterface {
 
     public function getModule(): string {
         return $this->sModule;
+    }
+
+    public function getName(): string {
+        return 'generator:generate';
     }
 }

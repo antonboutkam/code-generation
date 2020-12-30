@@ -1,6 +1,6 @@
-<?php/*** @unfixed**/
+<?php
 
-namespace Generator\Crud\CollectionType\CrudFieldCollectionTypeGenerator;
+namespace Generator\Generators\Crud\CollectionType;
 
 use Cli\CodeGen\Helpers\Crud;
 use Crud\IField;
@@ -8,8 +8,9 @@ use Helper\Schema\Table;
 use Nette\PhpGenerator\ClassType;
 use Nette\PhpGenerator\PhpNamespace;
 use Symfony\Component\Console\Output\OutputInterface;
+use Generator\Generators\BaseGenerator;
 
-final class CrudFieldCollectionTypeGenerator extends BaseGenerator
+final class CrudFieldCollectionTypeGenerator
 {
     public const INTERFACE_NAME = 'CollectionField';
 

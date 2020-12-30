@@ -1,6 +1,6 @@
-<?php/*** @unfixed**/
+<?php
 
-namespace Generator\Crud\Crud;
+namespace Generator\Generators\Crud;
 
 use Cli\Tools\CommandUtils;
 use Core\DataType\Path;

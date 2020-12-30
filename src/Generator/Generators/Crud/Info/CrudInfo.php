@@ -1,12 +1,12 @@
-<?php/*** @unfixed**/
+<?php
 
-namespace Generator\Crud\Info\CrudInfo;
+namespace Generator\Generators\Crud\Info;
 
 use Cli\Tools\CommandUtils;
 use Helper\Schema\Table;
 use Symfony\Component\Console\Output\OutputInterface;
 
-final class CrudInfo extends BaseGenerator
+final class CrudInfo
 {
     public function __construct(OutputInterface $oOutput = null)
     {

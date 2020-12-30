@@ -1,6 +1,6 @@
-<?php/*** @unfixed**/
+<?php
 
-namespace Generator\Api\ApiInfo;
+namespace Generator\Generators\Api;
 
 use Api\Info\IApiInfo;
 use Cli\Tools\CommandUtils;
@@ -49,7 +49,6 @@ final class ApiInfo
 
         $aMethods = [];
         foreach ($aMethodMap as $sMethodName => $aImplementation) {
-            echo "Add method $sMethodName" . PHP_EOL;
             $aMethods[$sMethodName] = $oClass->addMethod($sMethodName);
 
             $aMethods[$sMethodName]->setFinal(true);
@@ -85,7 +84,7 @@ final class ApiInfo
         /*
         $oApi->getTitle();
 
-        <?php/*** @unfixed**/
+        <?php
             namespace Api\Info;
 
             interface IApiInfo
