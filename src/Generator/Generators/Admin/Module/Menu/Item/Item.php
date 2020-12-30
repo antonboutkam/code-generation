@@ -2,13 +2,12 @@
 
 namespace Generator\Generators\Admin\Module\Menu\Item;
 
-use Symfony\Component\Console\Output\OutputInterface;
+use Hurah\Types\Exception\InvalidArgumentException;
 use Hurah\Types\Type\Html\MenuItem;
-use Hurah\Types\Type\Icon;
-use Hurah\Types\Type\PlainText;
-use Hurah\Types\Type\Url;
+use Symfony\Component\Console\Output\OutputInterface;
 
-final class Item {
+final class Item
+{
     public function __construct(ItemConfigInterface $config, OutputInterface $oOutput) {
         $this->config = $config;
         $this->output = $oOutput;
@@ -16,7 +15,7 @@ final class Item {
 
     /**
      * @return string
-     * @throws \Hurah\Types\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function generate(): MenuItem {
         // Tells Twig that this string is translatable.

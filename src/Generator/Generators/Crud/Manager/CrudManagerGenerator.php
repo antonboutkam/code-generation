@@ -122,11 +122,13 @@ final class CrudManagerGenerator
 
         $sFilePath = CommandUtils::getRoot() . '/classes/Crud/' . $oTable->getCrudDir() . '/CrudTrait.php';
 
-        if (true || !file_exists($sFilePath)) {
+        if (!file_exists($sFilePath)) {
             $this->output("Creating crud trait " . $sFilePath);
 
             file_put_contents($sFilePath, '<?php/*** @unfixed**/' . PHP_EOL . (string)$oNamespace);
-        } else {
+        }
+        else
+        {
             $this->output("Skipping crud trait, already existed " . $sFilePath);
         }
     }

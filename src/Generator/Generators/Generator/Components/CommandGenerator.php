@@ -10,7 +10,6 @@ use Generator\Generators\Helper\Command\Util;
 use Generator\Helper\Code\EmptyClass;
 use Hurah\Types\Exception\InvalidArgumentException;
 use Hurah\Types\Type\PlainText;
-use Hurah\Types\Type\Primitive;
 use Hurah\Types\Type\TypeType;
 use Nette\PhpGenerator\ClassType;
 use Nette\PhpGenerator\Literal;
@@ -38,7 +37,6 @@ final class CommandGenerator implements GeneratorInterface
 
     function generate(): string {
 
-        // Create namespace
         $oNamespace = new PhpNamespace($this->oConfig->getCommandClassName()
                                                      ->reduce(1));
         $oNamespace->addUse(Command::class, 'BaseCommand');
@@ -57,7 +55,8 @@ final class CommandGenerator implements GeneratorInterface
 
         foreach ($this->oConfig->getProperties() as $oProperty)
         {
-            $oNamespace->addUse($oProperty->getType()->toPhpNamespace());
+            $oNamespace->addUse($oProperty->getType()
+                                          ->toPhpNamespace());
         }
 
         // Create class
@@ -80,7 +79,6 @@ final class CommandGenerator implements GeneratorInterface
         $oExecuteMethod->addComment('@param InputInterface $input');
         $oExecuteMethod->addComment('@param OutputInterface $output');
         $oExecuteMethod->addComment('@return int');
-
 
         $oExecuteMethod->setBody($this->getExecuteBody($this->oConfig));
 
@@ -165,7 +163,6 @@ final class CommandGenerator implements GeneratorInterface
         return $oResult;
     }
 
-
     /**
      * @param ConfigInterface $oConfig
      * @return PlainText
@@ -183,7 +180,9 @@ final class CommandGenerator implements GeneratorInterface
         $oResult->addLn("");
         foreach ($oConfig->getProperties() as $property)
         {
-            $sType = 'new TypeType(' . $property->getType()->toPhpNamespace()->getShortName() . '::class)';
+            $sType = 'new TypeType(' . $property->getType()
+                                                ->toPhpNamespace()
+                                                ->getShortName() . '::class)';
             $sLabel = "'{$property->getLabel()}'";
             $sName = "'{$property->getName()}'";
             $sVarName = "\${$property->getName()}";
@@ -209,11 +208,11 @@ final class CommandGenerator implements GeneratorInterface
         $aSignatureArguments = [];
         foreach ($oConfig->getProperties() as $property)
         {
-            if ($property->getType()->isPrimitive())
+            if ($property->getType()
+                         ->isPrimitive())
             {
                 $aSignatureArguments[] = '$input->getArgument(\'' . $property->getName() . '\')';
-            }
-            else
+            } else
             {
                 $sPropertyType = $property->getType()
                                           ->toPhpNamespace()
@@ -223,7 +222,8 @@ final class CommandGenerator implements GeneratorInterface
             }
         }
 
-        $sWorkerClassName = $oConfig->getWorkerClassName()->getShortName();
+        $sWorkerClassName = $oConfig->getWorkerClassName()
+                                    ->getShortName();
         $oResult->addLn(join(',' . PHP_EOL, $aSignatureArguments));
         $oResult->addLn(');');
         $oResult->addLn('');
