@@ -25,13 +25,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b32c57a-3824-424d-ac8f-e36c2b239431" name="Default Changelist" comment="Reverting external change">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Generator/Generators/Admin/Module/Menu/Item/Item.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Generator/Generators/Admin/Module/Menu/Item/Item.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Generator/Generators/Crud/Manager/CrudManagerGenerator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Generator/Generators/Crud/Manager/CrudManagerGenerator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Generator/Generators/Generator/Components/CommandGenerator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Generator/Generators/Generator/Components/CommandGenerator.php" afterDir="false" />
-    </list>
+    <list default="true" id="6b32c57a-3824-424d-ac8f-e36c2b239431" name="Default Changelist" comment="Reverting external change" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -272,7 +266,7 @@
       <workItem from="1609146605494" duration="1092000" />
       <workItem from="1609166066220" duration="6815000" />
       <workItem from="1609252031150" duration="102000" />
-      <workItem from="1609252191263" duration="2258000" />
+      <workItem from="1609252191263" duration="2420000" />
     </task>
     <task id="LOCAL-00001" summary="Reverting external change">
       <created>1608076274449</created>
@@ -281,7 +275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608076274449</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Reverting external change">
+      <created>1609325777944</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1609325777944</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -343,26 +344,26 @@
       <screen x="0" y="0" width="3840" height="2160" />
     </state>
     <state x="2659" y="796" width="432" height="484" key="FileChooserDialogImpl/0.0.3840.2160@0.0.3840.2160" timestamp="1607955467561" />
-    <state width="1542" height="278" key="GridCell.Tab.0.bottom" timestamp="1609325205973">
+    <state width="1542" height="278" key="GridCell.Tab.0.bottom" timestamp="1609325790702">
       <screen x="35" y="27" width="1565" height="873" />
     </state>
     <state width="1891" height="704" key="GridCell.Tab.0.bottom/0.0.3840.2160@0.0.3840.2160" timestamp="1607955469027" />
-    <state width="1542" height="278" key="GridCell.Tab.0.bottom/35.27.1565.873@35.27.1565.873" timestamp="1609325205973" />
-    <state width="1542" height="278" key="GridCell.Tab.0.center" timestamp="1609325205972">
+    <state width="1542" height="278" key="GridCell.Tab.0.bottom/35.27.1565.873@35.27.1565.873" timestamp="1609325790702" />
+    <state width="1542" height="278" key="GridCell.Tab.0.center" timestamp="1609325790701">
       <screen x="35" y="27" width="1565" height="873" />
     </state>
     <state width="1891" height="704" key="GridCell.Tab.0.center/0.0.3840.2160@0.0.3840.2160" timestamp="1607955469026" />
-    <state width="1542" height="278" key="GridCell.Tab.0.center/35.27.1565.873@35.27.1565.873" timestamp="1609325205972" />
-    <state width="1542" height="278" key="GridCell.Tab.0.left" timestamp="1609325205972">
+    <state width="1542" height="278" key="GridCell.Tab.0.center/35.27.1565.873@35.27.1565.873" timestamp="1609325790701" />
+    <state width="1542" height="278" key="GridCell.Tab.0.left" timestamp="1609325790700">
       <screen x="35" y="27" width="1565" height="873" />
     </state>
     <state width="1891" height="704" key="GridCell.Tab.0.left/0.0.3840.2160@0.0.3840.2160" timestamp="1607955469026" />
-    <state width="1542" height="278" key="GridCell.Tab.0.left/35.27.1565.873@35.27.1565.873" timestamp="1609325205972" />
-    <state width="1542" height="278" key="GridCell.Tab.0.right" timestamp="1609325205973">
+    <state width="1542" height="278" key="GridCell.Tab.0.left/35.27.1565.873@35.27.1565.873" timestamp="1609325790700" />
+    <state width="1542" height="278" key="GridCell.Tab.0.right" timestamp="1609325790701">
       <screen x="35" y="27" width="1565" height="873" />
     </state>
     <state width="1891" height="704" key="GridCell.Tab.0.right/0.0.3840.2160@0.0.3840.2160" timestamp="1607955469027" />
-    <state width="1542" height="278" key="GridCell.Tab.0.right/35.27.1565.873@35.27.1565.873" timestamp="1609325205973" />
+    <state width="1542" height="278" key="GridCell.Tab.0.right/35.27.1565.873@35.27.1565.873" timestamp="1609325790701" />
     <state x="428" y="232" width="985" height="505" key="NewPhpClassDialog" timestamp="1608808917630">
       <screen x="35" y="27" width="1565" height="873" />
     </state>
@@ -380,10 +381,10 @@
       <screen x="35" y="27" width="1565" height="873" />
     </state>
     <state width="606" height="446" key="SwitcherDM/35.27.1565.873@35.27.1565.873" timestamp="1608328916649" />
-    <state x="412" y="184" width="800" height="556" key="Vcs.Push.Dialog.v2" timestamp="1608076276042">
+    <state x="412" y="184" width="800" height="556" key="Vcs.Push.Dialog.v2" timestamp="1609325781036">
       <screen x="35" y="27" width="1565" height="873" />
     </state>
-    <state x="412" y="184" width="800" height="556" key="Vcs.Push.Dialog.v2/35.27.1565.873@35.27.1565.873" timestamp="1608076276042" />
+    <state x="412" y="184" width="800" height="556" key="Vcs.Push.Dialog.v2/35.27.1565.873@35.27.1565.873" timestamp="1609325781036" />
     <state x="135" y="125" width="1365" height="675" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1608076377803">
       <screen x="35" y="27" width="1565" height="873" />
     </state>
