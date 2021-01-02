@@ -18,7 +18,7 @@ abstract class AbstractConfigGenerator
     {
         $sType = "{$oConfigProperty->getType()}";
         $bIsBool = $sType === 'bool';
-        $mDefaultValue = $oConfigProperty->getDefault();
+        $mDefaultValue = "{$oConfigProperty->getDefault()}";
         if ($bIsBool) {
             $mDefaultValue = !empty($oConfigProperty->getDefault());
         }

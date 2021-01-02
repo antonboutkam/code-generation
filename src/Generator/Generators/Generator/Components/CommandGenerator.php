@@ -178,45 +178,27 @@ final class CommandGenerator implements GeneratorInterface
         $oResult->addLn("");
         $oResult->addLn('$oQuestionHelper = new Question($input, $output);');
         $oResult->addLn("");
-        foreach ($oConfig->getProperties() as $property)
-        {
-            $sType = 'new TypeType(' . $property->getType()
-                                                ->toPhpNamespace()
-                                                ->getShortName() . '::class)';
-            $sLabel = "'{$property->getLabel()}'";
-            $sName = "'{$property->getName()}'";
-            $sVarName = "\${$property->getName()}";
-            $oResult->addLn($sVarName . ' = $oQuestionHelper->ask(' . $sLabel . ', ' . $sType . ', ' . $sName . ');');
-        }
+        $this->addInteractBodyQuestions($oConfig, $oResult);
         $oResult->addLn("");
-        foreach ($oConfig->getProperties() as $property)
-        {
-            $sName = "'{$property->getName()}'";
-            $sVarName = "\${$property->getName()}";
-            $oResult->addLn('$input->setArgument(' . $sName . ', ' . $sVarName . ');');
-        }
-
         return $oResult;
     }
+
     private function getExecuteBody(ConfigInterface $oConfig): PlainText {
         $oResult = new PlainText();
 
-        $sConfigClassName = $this->oConfig->getConfigClassName()
-                                          ->getShortName();
+        $sConfigClassName = $this->oConfig->getConfigClassName()->getShortName();
 
         $oResult->addLn('$oConfig = ' . $sConfigClassName . '::create(');
         $aSignatureArguments = [];
         foreach ($oConfig->getProperties() as $property)
         {
-            if ($property->getType()
-                         ->isPrimitive())
+            if ($property->getType()->isPrimitive())
             {
                 $aSignatureArguments[] = '$input->getArgument(\'' . $property->getName() . '\')';
-            } else
+            }
+            else
             {
-                $sPropertyType = $property->getType()
-                                          ->toPhpNamespace()
-                                          ->getShortName();
+                $sPropertyType = $property->getType()->toPhpNamespace()->getShortName();
                 $sPropertyName = "'" . $property->getName() . "'";
                 $aSignatureArguments[] = '  new ' . $sPropertyType . '($input->getArgument(' . $sPropertyName . '))';
             }
@@ -246,5 +228,26 @@ final class CommandGenerator implements GeneratorInterface
         $oResult->addLn('}');
         $oResult->addLn('return BaseCommand::SUCCESS;');
         return $oResult;
+    }
+
+    /**
+     * @param ConfigInterface $oConfig
+     * @param PlainText $oResult
+     * @return array
+     */
+    private function addInteractBodyQuestions(ConfigInterface $oConfig, PlainText $oResult): void {
+        foreach ($oConfig->getProperties() as $property) {
+
+            $sType = 'new TypeType(' . $property->getType()
+                    ->toPhpNamespace()
+                    ->getShortName() . '::class)';
+            $sLabel = "'{$property->getLabel()}'";
+            $sName = "'{$property->getName()}'";
+            $sAnswerVarName = "\${$property->getName()}";
+            $oResult->addLn($sAnswerVarName . ' = $oQuestionHelper->ask(' . $sLabel . ', ' . $sType . ', ' . $sName . ');');
+            $oResult->addLn('$input->setArgument(' . $sName . ', ' . $sAnswerVarName . ');');
+            $oResult->addLn("");
+
+        }
     }
 }

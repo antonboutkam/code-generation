@@ -24,7 +24,7 @@ class GeneratorTest extends TestCase
     }
 
     public function testGenerate2() {
-        $oConfig = $this->getConfigObject1();
+        $oConfig = $this->getConfigObject2();
         $oGenerator = new Generator($oConfig, new ArrayInput([]), new ConsoleOutput());
         $oGenerator->generate();
     }

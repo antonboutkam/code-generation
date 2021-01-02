@@ -24,7 +24,6 @@ final class Generator implements GeneratorInterface{
         $this->input = $oInput;
     }
 
-
     public function generate() {
         $oConfigClassGenerator = new ConfigClassGenerator($this->config, $this->input, $this->output);
         $oInterfaceGenerator = new ConfigInterfaceGenerator($this->config, $this->input, $this->output);

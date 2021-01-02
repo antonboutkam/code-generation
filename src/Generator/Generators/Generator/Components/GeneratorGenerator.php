@@ -31,9 +31,11 @@ final class GeneratorGenerator implements GeneratorInterface
         $oNamespace->addUse($this->oConfig->getConfigInterfaceName());
         $oNamespace->addUse(OutputInterface::class);
         $oNamespace->addUse(InputInterface::class);
-
+        $oNamespace->addUse(GeneratorInterface::class);
         $oNamespace->addUse(PlainText::class);
+
         $oClass = new ClassType($sClassName);
+        $oClass->addImplement(GeneratorInterface::class);
 
         $this->addProperties($oClass);
         $this->addConstructor($oClass, $this->oConfig);
