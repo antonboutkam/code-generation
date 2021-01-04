@@ -25,13 +25,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b32c57a-3824-424d-ac8f-e36c2b239431" name="Default Changelist" comment="Removed obsolete unit tests, fixed some namespace names that came from the generator and where incorrect.">
-      <change beforePath="$PROJECT_DIR$/.idea/generator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/generator.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Generator/Generators/Build/BuildStructure.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Generator/Generators/Build/BuildStructure.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Generators/Generator/Helper/DerrivedClassNameTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Generator/Generators/Generator/Helper/DerrivedClassNameTest.php" afterDir="false" />
+    <list default="true" id="6b32c57a-3824-424d-ac8f-e36c2b239431" name="Default Changelist" comment="Unit test was generated in the wrong location.">
       <change beforePath="$PROJECT_DIR$/../innovation-app-core/classes/Generator/Composer/Utils.php" beforeDir="false" afterPath="$PROJECT_DIR$/../innovation-app-core/classes/Generator/Composer/Utils.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -312,7 +306,8 @@
     <MESSAGE value="Rouning up code generation generator" />
     <MESSAGE value="Added some code generators" />
     <MESSAGE value="Removed obsolete unit tests, fixed some namespace names that came from the generator and where incorrect." />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed obsolete unit tests, fixed some namespace names that came from the generator and where incorrect." />
+    <MESSAGE value="Unit test was generated in the wrong location." />
+    <option name="LAST_COMMIT_MESSAGE" value="Unit test was generated in the wrong location." />
   </component>
   <component name="WindowStateProjectService">
     <state x="1027" y="94" width="654" height="729" key="#PHP" timestamp="1609325959711">
@@ -367,25 +362,25 @@
       <screen x="0" y="0" width="3840" height="2160" />
     </state>
     <state x="2651" y="744" width="432" height="484" key="FileChooserDialogImpl/0.0.3840.2160@0.0.3840.2160" timestamp="1609625306096" />
-    <state width="2275" height="775" key="GridCell.Tab.0.bottom" timestamp="1609624631764">
+    <state width="1251" height="857" key="GridCell.Tab.0.bottom" timestamp="1609751379174">
       <screen x="0" y="0" width="3840" height="2160" />
     </state>
-    <state width="2275" height="775" key="GridCell.Tab.0.bottom/0.0.3840.2160@0.0.3840.2160" timestamp="1609624631764" />
+    <state width="1251" height="857" key="GridCell.Tab.0.bottom/0.0.3840.2160@0.0.3840.2160" timestamp="1609751379174" />
     <state width="1542" height="278" key="GridCell.Tab.0.bottom/35.27.1565.873@35.27.1565.873" timestamp="1609325205973" />
-    <state width="2275" height="775" key="GridCell.Tab.0.center" timestamp="1609624631764">
+    <state width="1251" height="857" key="GridCell.Tab.0.center" timestamp="1609751379173">
       <screen x="0" y="0" width="3840" height="2160" />
     </state>
-    <state width="2275" height="775" key="GridCell.Tab.0.center/0.0.3840.2160@0.0.3840.2160" timestamp="1609624631764" />
+    <state width="1251" height="857" key="GridCell.Tab.0.center/0.0.3840.2160@0.0.3840.2160" timestamp="1609751379173" />
     <state width="1542" height="278" key="GridCell.Tab.0.center/35.27.1565.873@35.27.1565.873" timestamp="1609325205972" />
-    <state width="2275" height="775" key="GridCell.Tab.0.left" timestamp="1609624631764">
+    <state width="1251" height="857" key="GridCell.Tab.0.left" timestamp="1609751379173">
       <screen x="0" y="0" width="3840" height="2160" />
     </state>
-    <state width="2275" height="775" key="GridCell.Tab.0.left/0.0.3840.2160@0.0.3840.2160" timestamp="1609624631764" />
+    <state width="1251" height="857" key="GridCell.Tab.0.left/0.0.3840.2160@0.0.3840.2160" timestamp="1609751379173" />
     <state width="1542" height="278" key="GridCell.Tab.0.left/35.27.1565.873@35.27.1565.873" timestamp="1609325205972" />
-    <state width="2275" height="775" key="GridCell.Tab.0.right" timestamp="1609624631764">
+    <state width="1251" height="857" key="GridCell.Tab.0.right" timestamp="1609751379174">
       <screen x="0" y="0" width="3840" height="2160" />
     </state>
-    <state width="2275" height="775" key="GridCell.Tab.0.right/0.0.3840.2160@0.0.3840.2160" timestamp="1609624631764" />
+    <state width="1251" height="857" key="GridCell.Tab.0.right/0.0.3840.2160@0.0.3840.2160" timestamp="1609751379174" />
     <state width="1542" height="278" key="GridCell.Tab.0.right/35.27.1565.873@35.27.1565.873" timestamp="1609325205973" />
     <state width="2275" height="775" key="GridCell.Tab.1.bottom" timestamp="1609624631765">
       <screen x="0" y="0" width="3840" height="2160" />
@@ -421,10 +416,10 @@
       <screen x="35" y="27" width="1565" height="873" />
     </state>
     <state width="606" height="446" key="SwitcherDM/35.27.1565.873@35.27.1565.873" timestamp="1608328916649" />
-    <state x="913" y="310" width="808" height="555" key="Vcs.Push.Dialog.v2" timestamp="1609625002307">
+    <state x="909" y="284" width="808" height="555" key="Vcs.Push.Dialog.v2" timestamp="1609751311808">
       <screen x="0" y="0" width="3840" height="2160" />
     </state>
-    <state x="913" y="310" width="808" height="555" key="Vcs.Push.Dialog.v2/0.0.3840.2160@0.0.3840.2160" timestamp="1609625002307" />
+    <state x="909" y="284" width="808" height="555" key="Vcs.Push.Dialog.v2/0.0.3840.2160@0.0.3840.2160" timestamp="1609751311808" />
     <state x="412" y="184" width="800" height="556" key="Vcs.Push.Dialog.v2/35.27.1565.873@35.27.1565.873" timestamp="1608076276042" />
     <state x="1536" y="1064" width="2304" height="1065" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1609614733866">
       <screen x="0" y="0" width="3840" height="2160" />
