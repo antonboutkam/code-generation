@@ -1,6 +1,6 @@
 <?php
 
-namespace Test\Generators\Generator\Helper;
+namespace Test\Generator\Generators\Generator\Helper;
 
 use Generator\Generators\Generator\Helper\DerivedClassName;
 use Hurah\Types\Type\PhpNamespace;

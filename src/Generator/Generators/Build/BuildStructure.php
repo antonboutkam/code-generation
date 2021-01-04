@@ -2,6 +2,7 @@
 
 namespace Generator\Generators\Build;
 
+use Generator\IBuildFolderOwner;
 use Generator\Generators\IBuildFolderOwner;
 use Generator\Generators\IPropelConfigBuildVo;
 use Cli\Tools\VO\SystemBuildConfig;
