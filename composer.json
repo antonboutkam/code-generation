@@ -6,6 +6,7 @@
     "prefer-stable": true,
     "require": {
         "PHP": "^7.4",
+        "nette/php-generator": "^3.5",
         "hurah/util" : "*",
         "symfony/finder": "^5.2",
         "symfony/console": "^5.2",
@@ -22,9 +23,7 @@
         "ext-libxml": "*",
         "ext-simplexml": "*",
         "ext-intl" : "*",
-        "nette/php-generator": "^3.5",
         "psr/log": "^1.1",
-		"ext-tidy": "*",
         "mihaeu/html-formatter": "*"
 	},
     "require-dev": {

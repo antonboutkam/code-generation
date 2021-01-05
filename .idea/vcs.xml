@@ -2,6 +2,10 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/../util" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/bri-domain" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/brp-domain" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/domain-home" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/gemeente-api" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/justitie-api" vcs="Git" />
   </component>
 </project>
