@@ -3,8 +3,8 @@
 namespace Generator\Generators\Crud\Manager;
 
 use Cli\Tools\CommandUtils;
-use Core\DataType\Date;
-use Core\DataType\PhpNamespace;
+use Hurah\Types\Type\Date;
+use Hurah\Types\Type\PhpNamespace;
 use Core\QueryMapper;
 use Core\Utils;
 use Crud\FieldCollection;

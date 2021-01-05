@@ -25,7 +25,7 @@ final class CrudFieldCollectionTypeGenerator
         $this->makeBaseFieldCollectionType($oTable);
     }
 
-    public static function getPublicInterfaceName(Table $oTable): \Core\DataType\PhpNamespace
+    public static function getPublicInterfaceName(Table $oTable): \Hurah\Types\Type\PhpNamespace
     {
         return Crud::makeClassName(self::INTERFACE_NAME, $oTable, Crud::VERSION_USER, Crud::TYPE_INTERFACE);
     }

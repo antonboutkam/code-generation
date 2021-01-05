@@ -3,7 +3,7 @@
 namespace Generator\Generators\Crud\FieldIterator;
 
 use Cli\CodeGen\Helpers\Crud;
-use Core\DataType\PhpNamespace as PhpNamespaceType;
+use Hurah\Types\Type\PhpNamespace as PhpNamespaceType;
 use Crud\BaseCrudFieldIterator;
 use Crud\ICrudFieldIterator;
 use Exception\InvalidArgumentException;

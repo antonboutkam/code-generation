@@ -2,7 +2,7 @@
 namespace Generator\Generators;
 
 use Hurah\Types\Type\Path;
-use Core\DataType\PlainText;
+use Hurah\Types\Type\PlainText;
 use Symfony\Component\Console\Output\OutputInterface;
 
 abstract class BaseGenerator

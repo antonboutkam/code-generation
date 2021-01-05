@@ -3,10 +3,10 @@
 namespace Generator\Generators\Crud;
 
 use Cli\Tools\CommandUtils;
-use Core\DataType\Path;
+use Hurah\Types\Type\Path;
 use Core\Utils;
 use Helper\Schema\Table;
-use Core\DataType\PhpNamespace;
+use Hurah\Types\Type\PhpNamespace;
 
 class Crud
 {

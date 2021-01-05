@@ -3,7 +3,7 @@
 namespace Generator\Generators\Build;
 
 use Cli\Tools\VO\Contracts\ISchemaVo;
-use Core\DataType\PhpNamespace;
+use Hurah\Types\Type\PhpNamespace;
 
 class SchemaXml
 {

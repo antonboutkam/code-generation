@@ -3,7 +3,7 @@
 namespace Generator\Generators\Admin\Module\Config;
 
 use AdminModules\ModuleConfig;
-use Core\DataType\PlainText;
+use Hurah\Types\Type\PlainText;
 use Core\Translate;
 use Generator\Generators\Fragment\Php;
 use Nette\PhpGenerator\ClassType;
