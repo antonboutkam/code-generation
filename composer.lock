@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e50610240824cc4835fda572995a513c",
+    "content-hash": "26073f72fb26b98cfae1f801bf453f0a",
     "packages": [
         {
             "name": "bluerhinos/phpmqtt",
@@ -114,39 +114,37 @@
         },
         {
             "name": "composer/composer",
-            "version": "1.10.19",
+            "version": "2.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/composer.git",
-                "reference": "196601d50c08c3fae389a417a7689367fcf37cef"
+                "reference": "62139b2806178adb979d76bd3437534a1a9fd490"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/196601d50c08c3fae389a417a7689367fcf37cef",
-                "reference": "196601d50c08c3fae389a417a7689367fcf37cef",
+                "url": "https://api.github.com/repos/composer/composer/zipball/62139b2806178adb979d76bd3437534a1a9fd490",
+                "reference": "62139b2806178adb979d76bd3437534a1a9fd490",
                 "shasum": ""
             },
             "require": {
                 "composer/ca-bundle": "^1.0",
-                "composer/semver": "^1.0",
+                "composer/semver": "^3.0",
                 "composer/spdx-licenses": "^1.2",
                 "composer/xdebug-handler": "^1.1",
                 "justinrainbow/json-schema": "^5.2.10",
                 "php": "^5.3.2 || ^7.0 || ^8.0",
                 "psr/log": "^1.0",
+                "react/promise": "^1.2 || ^2.7",
                 "seld/jsonlint": "^1.4",
                 "seld/phar-utils": "^1.0",
-                "symfony/console": "^2.7 || ^3.0 || ^4.0 || ^5.0",
-                "symfony/filesystem": "^2.7 || ^3.0 || ^4.0 || ^5.0",
-                "symfony/finder": "^2.7 || ^3.0 || ^4.0 || ^5.0",
-                "symfony/process": "^2.7 || ^3.0 || ^4.0 || ^5.0"
-            },
-            "conflict": {
-                "symfony/console": "2.8.38"
+                "symfony/console": "^2.8.52 || ^3.4.35 || ^4.4 || ^5.0",
+                "symfony/filesystem": "^2.8.52 || ^3.4.35 || ^4.4 || ^5.0",
+                "symfony/finder": "^2.8.52 || ^3.4.35 || ^4.4 || ^5.0",
+                "symfony/process": "^2.8.52 || ^3.4.35 || ^4.4 || ^5.0"
             },
             "require-dev": {
                 "phpspec/prophecy": "^1.10",
-                "symfony/phpunit-bridge": "^4.2"
+                "symfony/phpunit-bridge": "^4.2 || ^5.0"
             },
             "suggest": {
                 "ext-openssl": "Enabling the openssl extension allows you to access https URLs for repositories and packages",
@@ -159,7 +157,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.10-dev"
+                    "dev-master": "2.0-dev"
                 }
             },
             "autoload": {
@@ -175,12 +173,12 @@
                 {
                     "name": "Nils Adermann",
                     "email": "naderman@naderman.de",
-                    "homepage": "http://www.naderman.de"
+                    "homepage": "https://www.naderman.de"
                 },
                 {
                     "name": "Jordi Boggiano",
                     "email": "j.boggiano@seld.be",
-                    "homepage": "http://seld.be"
+                    "homepage": "https://seld.be"
                 }
             ],
             "description": "Composer helps you declare, manage and install dependencies of PHP projects. It ensures you have the right stack everywhere.",
@@ -204,32 +202,33 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-12-04T08:14:16+00:00"
+            "time": "2020-12-03T16:20:39+00:00"
         },
         {
             "name": "composer/semver",
-            "version": "1.7.2",
+            "version": "3.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/semver.git",
-                "reference": "647490bbcaf7fc4891c58f47b825eb99d19c377a"
+                "reference": "a02fdf930a3c1c3ed3a49b5f63859c0c20e10464"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/semver/zipball/647490bbcaf7fc4891c58f47b825eb99d19c377a",
-                "reference": "647490bbcaf7fc4891c58f47b825eb99d19c377a",
+                "url": "https://api.github.com/repos/composer/semver/zipball/a02fdf930a3c1c3ed3a49b5f63859c0c20e10464",
+                "reference": "a02fdf930a3c1c3ed3a49b5f63859c0c20e10464",
                 "shasum": ""
             },
             "require": {
                 "php": "^5.3.2 || ^7.0 || ^8.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^4.5 || ^5.0.5"
+                "phpstan/phpstan": "^0.12.54",
+                "symfony/phpunit-bridge": "^4.2 || ^5"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.x-dev"
+                    "dev-main": "3.x-dev"
                 }
             },
             "autoload": {
@@ -279,7 +278,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-12-03T15:47:16+00:00"
+            "time": "2020-11-13T08:59:24+00:00"
         },
         {
             "name": "composer/spdx-licenses",
@@ -1115,6 +1114,47 @@
             "time": "2020-12-14T16:23:06+00:00"
         },
         {
+            "name": "hurah/hurah-installer",
+            "version": "v1.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/antonboutkam/hurah-installer.git",
+                "reference": "69748c89929263f1b778db8f516870355e9057af"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/antonboutkam/hurah-installer/zipball/69748c89929263f1b778db8f516870355e9057af",
+                "reference": "69748c89929263f1b778db8f516870355e9057af",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "*",
+                "composer/composer": "^2.0.8",
+                "ext-json": "*",
+                "hurah/data-types": "*",
+                "hurah/util": "*",
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.3.8"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Hi\\Plugin"
+            },
+            "autoload": {
+                "psr-4": {
+                    "Hi\\": "src/Hi"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Installer scripts for Hurah!",
+            "time": "2021-01-04T16:03:52+00:00"
+        },
+        {
             "name": "hurah/util",
             "version": "dev-main",
             "dist": {
@@ -1214,16 +1254,16 @@
         },
         {
             "name": "jms/serializer",
-            "version": "3.10.0",
+            "version": "3.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/serializer.git",
-                "reference": "0ed0b6aa79cc029772286f2dc262f6933674b0ec"
+                "reference": "5158b454ecf209a9fea91c837e827355204581ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/serializer/zipball/0ed0b6aa79cc029772286f2dc262f6933674b0ec",
-                "reference": "0ed0b6aa79cc029772286f2dc262f6933674b0ec",
+                "url": "https://api.github.com/repos/schmittjoh/serializer/zipball/5158b454ecf209a9fea91c837e827355204581ea",
+                "reference": "5158b454ecf209a9fea91c837e827355204581ea",
                 "shasum": ""
             },
             "require": {
@@ -1231,7 +1271,8 @@
                 "doctrine/instantiator": "^1.0.3",
                 "doctrine/lexer": "^1.1",
                 "jms/metadata": "^2.0",
-                "php": "^7.2"
+                "php": "^7.2||^8.0",
+                "phpstan/phpdoc-parser": "^0.4"
             },
             "require-dev": {
                 "doctrine/coding-standard": "^8.1",
@@ -1260,7 +1301,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.10-dev"
+                    "dev-master": "3.11-dev"
                 }
             },
             "autoload": {
@@ -1297,7 +1338,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-10-29T20:24:00+00:00"
+            "time": "2020-12-29T12:26:56+00:00"
         },
         {
             "name": "jurosh/pdf-merge",
@@ -1825,18 +1866,17 @@
             "source": {
                 "type": "git",
                 "url": "https://gitlab.com/NovumGit/innovation-app-core.git",
-                "reference": "76fa064c2cedbadc3227fb276746433c0b3984fc"
+                "reference": "17f7ff387926cd30e2f5ad87e5fc7e205e162169"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://gitlab.com/api/v4/projects/NovumGit%2Finnovation-app-core/repository/archive.zip?sha=76fa064c2cedbadc3227fb276746433c0b3984fc",
-                "reference": "76fa064c2cedbadc3227fb276746433c0b3984fc",
+                "url": "https://gitlab.com/api/v4/projects/NovumGit%2Finnovation-app-core/repository/archive.zip?sha=17f7ff387926cd30e2f5ad87e5fc7e205e162169",
+                "reference": "17f7ff387926cd30e2f5ad87e5fc7e205e162169",
                 "shasum": ""
             },
             "require": {
                 "bluerhinos/phpmqtt": "dev-master",
-                "composer-plugin-api": "^1.0",
-                "composer/composer": "1.10.*",
+                "composer/composer": "^2.0.8",
                 "ext-curl": "*",
                 "ext-dom": "*",
                 "ext-gd": "*",
@@ -1846,20 +1886,23 @@
                 "ext-mysqli": "*",
                 "ext-pdo": "*",
                 "ext-simplexml": "*",
+                "ext-soap": "*",
                 "ext-sockets": "*",
                 "eycopia/excel": "^1.0",
                 "goetas-webservices/xsd2php-runtime": "^0.2.11",
                 "gregwar/image": "2.*",
                 "guzzlehttp/guzzle": "^6.3",
                 "hurah/data-types": "^1.0",
+                "hurah/hurah-installer": "v1.0.6",
                 "jurosh/pdf-merge": "^2.0",
                 "knplabs/knp-snappy": "v1.2.1",
                 "linkedinapi/linkedin": "^1.1",
                 "monolog/monolog": "1.24.*",
                 "neitanod/forceutf8": "^2.0",
                 "nette/php-generator": "^3.2",
+                "novum/code-generation": "*",
                 "paquettg/php-html-parser": "^1.7",
-                "php": "^7.3",
+                "php": "^7.4",
                 "php-console/php-console": "^3.1",
                 "phpfastcache/phpfastcache": "^6.0",
                 "propel/propel": "~2.0@dev",
@@ -1873,8 +1916,7 @@
             "require-dev": {
                 "goetas-webservices/xsd2php": "^0.3",
                 "phpunit/phpunit": "^6.0",
-                "phpunit/phpunit-selenium": "4.1.0",
-                "phpunit/phpunit-story": "1.0.2"
+                "phpunit/phpunit-selenium": "4.1.0"
             },
             "bin": [
                 "./build/tools/hurah",
@@ -1886,14 +1928,11 @@
                     "Api\\": "classes/Api",
                     "Core\\": "classes/Core",
                     "Cli\\": "classes/Cli",
-                    "Generator\\": "classes/Generator",
                     "Ui\\": "classes/Ui",
                     "LowCode\\": "classes/LowCode",
-                    "Psp\\": "classes/Psp",
                     "Crud\\": "classes/Crud",
                     "Model\\": "classes/Model",
                     "Helper\\": "classes/Helper",
-                    "Test\\": "test",
                     "Exception\\": "classes/Exception",
                     "AdminModules\\": "admin_modules",
                     "_Default\\": "public_html/_default/modules",
@@ -1904,7 +1943,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2020-12-10T07:43:06+00:00"
+            "time": "2021-01-07T14:36:30+00:00"
         },
         {
             "name": "paquettg/php-html-parser",
@@ -2321,6 +2360,52 @@
                 }
             ],
             "time": "2020-07-20T17:29:33+00:00"
+        },
+        {
+            "name": "phpstan/phpdoc-parser",
+            "version": "0.4.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpstan/phpdoc-parser.git",
+                "reference": "5c1eb9aac80cb236f1b7fbe52e691afe4cc9f430"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/5c1eb9aac80cb236f1b7fbe52e691afe4cc9f430",
+                "reference": "5c1eb9aac80cb236f1b7fbe52e691afe4cc9f430",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1 || ^8.0"
+            },
+            "require-dev": {
+                "phing/phing": "^2.16.3",
+                "php-parallel-lint/php-parallel-lint": "^1.2",
+                "phpstan/extension-installer": "^1.0",
+                "phpstan/phpstan": "^0.12.60",
+                "phpstan/phpstan-strict-rules": "^0.12.5",
+                "phpunit/phpunit": "^7.5.20",
+                "symfony/process": "^4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PHPStan\\PhpDocParser\\": [
+                        "src/"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "PHPDoc parser with support for nullable, intersection and generic types",
+            "time": "2020-12-12T15:45:28+00:00"
         },
         {
             "name": "propel/propel",
@@ -2757,6 +2842,52 @@
                 "uuid"
             ],
             "time": "2020-02-21T04:36:14+00:00"
+        },
+        {
+            "name": "react/promise",
+            "version": "v2.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reactphp/promise.git",
+                "reference": "f3cff96a19736714524ca0dd1d4130de73dbbbc4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reactphp/promise/zipball/f3cff96a19736714524ca0dd1d4130de73dbbbc4",
+                "reference": "f3cff96a19736714524ca0dd1d4130de73dbbbc4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7.0 || ^6.5 || ^5.7 || ^4.8.36"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "React\\Promise\\": "src/"
+                },
+                "files": [
+                    "src/functions_include.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jan Sorgalla",
+                    "email": "jsorgalla@gmail.com"
+                }
+            ],
+            "description": "A lightweight implementation of CommonJS Promises/A for PHP",
+            "keywords": [
+                "promise",
+                "promises"
+            ],
+            "time": "2020-05-12T15:16:56+00:00"
         },
         {
             "name": "respect/validation",
@@ -6257,8 +6388,7 @@
         "ext-curl": "*",
         "ext-libxml": "*",
         "ext-simplexml": "*",
-        "ext-intl": "*",
-        "ext-tidy": "*"
+        "ext-intl": "*"
     },
     "platform-dev": [],
     "plugin-api-version": "1.1.0"

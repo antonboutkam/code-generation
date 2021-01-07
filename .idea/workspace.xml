@@ -25,28 +25,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b32c57a-3824-424d-ac8f-e36c2b239431" name="Default Changelist" comment="Removed unused code">
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+    <list default="true" id="6b32c57a-3824-424d-ac8f-e36c2b239431" name="Default Changelist" comment="Fixing paths, update composer.json and composer.lock">
       <change beforePath="$PROJECT_DIR$/.idea/generator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/generator.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Generator/Generators/Admin/Module/Controller/Edit/Generator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Generator/Generators/Admin/Module/Controller/Edit/Generator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Generator/Generators/Admin/Module/Controller/FromSchema.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Generator/Generators/Admin/Module/Controller/FromSchema.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Generator/Generators/Build/BuildStructure.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Generator/Generators/Build/BuildStructure.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Generator/Generators/Generator/Components/GeneratorGenerator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Generator/Generators/Generator/Components/GeneratorGenerator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Generator/Generators/Norered/GenerateDatasources.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Generator/Generators/Nodered/GenerateDatasources.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Generator/Generators/Admin/Module/Controller/Edit/BaseGeneratorTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Generator/Generators/Admin/Module/Controller/Edit/BaseGeneratorTestIncomplete.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Generator/Generators/Admin/Module/Controller/Edit/GeneratorTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Generator/Generators/Admin/Module/Controller/Edit/GeneratorTestIncomplete.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Generator/Generators/Admin/Module/Controller/Overview/BaseGeneratorTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Generator/Generators/Admin/Module/Controller/Overview/BaseGeneratorTestIncomplete.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Generator/Generators/Admin/Module/Controller/Overview/GeneratorTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Generator/Generators/Admin/Module/Controller/Overview/GeneratorTestIncomplete.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Generator/Generators/Admin/Module/Structure/StructureTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Generator/Generators/Admin/Module/Structure/StructureTestIncomplete.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Generator/Generators/Generator/CommandTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Generator/Generators/Generator/CommandTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Generator/Generators/Generator/Components/ConfigClassGeneratorTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Generator/Generators/Generator/Components/ConfigClassGeneratorTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Generator/Generators/Generator/Components/TestGeneratorTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Generator/Generators/Generator/Components/TestGeneratorTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Generator/Generators/Generator/ConfigTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Generator/Generators/Generator/ConfigTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Generator/Generators/Generator/GeneratorTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Generator/Generators/Generator/GeneratorTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Generator/Ui/Component/Installer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Generator/Ui/Component/Installer.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,6 +147,9 @@
       <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/vendor/propel/propel" />
       <path value="$PROJECT_DIR$/vendor/mihaeu/html-formatter" />
+      <path value="$PROJECT_DIR$/vendor/hurah/hurah-installer" />
+      <path value="$PROJECT_DIR$/vendor/react/promise" />
+      <path value="$PROJECT_DIR$/vendor/phpstan/phpdoc-parser" />
     </include_path>
   </component>
   <component name="ProjectId" id="1le5fELGUjTRFa9F7IcK2760s0L" />
@@ -329,7 +317,8 @@
     <MESSAGE value="Unit test was generated in the wrong location." />
     <MESSAGE value="Removed tidy ext dependency" />
     <MESSAGE value="Removed unused code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed unused code" />
+    <MESSAGE value="Fixing paths, update composer.json and composer.lock" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixing paths, update composer.json and composer.lock" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1027" y="94" width="654" height="729" key="#PHP" timestamp="1609325959711">
@@ -438,10 +427,10 @@
       <screen x="35" y="27" width="1565" height="873" />
     </state>
     <state width="606" height="446" key="SwitcherDM/35.27.1565.873@35.27.1565.873" timestamp="1608328916649" />
-    <state x="897" y="206" width="808" height="555" key="Vcs.Push.Dialog.v2" timestamp="1609841130540">
+    <state x="893" y="180" width="808" height="555" key="Vcs.Push.Dialog.v2" timestamp="1610033308130">
       <screen x="0" y="0" width="3840" height="2160" />
     </state>
-    <state x="897" y="206" width="808" height="555" key="Vcs.Push.Dialog.v2/0.0.3840.2160@0.0.3840.2160" timestamp="1609841130540" />
+    <state x="893" y="180" width="808" height="555" key="Vcs.Push.Dialog.v2/0.0.3840.2160@0.0.3840.2160" timestamp="1610033308130" />
     <state x="412" y="184" width="800" height="556" key="Vcs.Push.Dialog.v2/35.27.1565.873@35.27.1565.873" timestamp="1608076276042" />
     <state x="1536" y="1064" width="2304" height="1065" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1609614733866">
       <screen x="0" y="0" width="3840" height="2160" />
@@ -487,10 +476,10 @@
     </state>
     <state x="1094" y="448" key="run.anything.popup/0.0.3840.2160@0.0.3840.2160" timestamp="1609330703358" />
     <state x="481" y="208" key="run.anything.popup/35.27.1565.873@35.27.1565.873" timestamp="1609253064111" />
-    <state x="2543" y="501" width="672" height="678" key="search.everywhere.popup" timestamp="1610032801240">
+    <state x="2543" y="501" width="672" height="678" key="search.everywhere.popup" timestamp="1610033804291">
       <screen x="0" y="0" width="3840" height="2160" />
     </state>
-    <state x="2543" y="501" width="672" height="678" key="search.everywhere.popup/0.0.3840.2160@0.0.3840.2160" timestamp="1610032801240" />
+    <state x="2543" y="501" width="672" height="678" key="search.everywhere.popup/0.0.3840.2160@0.0.3840.2160" timestamp="1610033804291" />
     <state x="928" y="229" width="672" height="275" key="search.everywhere.popup/35.27.1565.873@35.27.1565.873" timestamp="1609030506326" />
   </component>
 </project>
