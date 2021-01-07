@@ -25,9 +25,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b32c57a-3824-424d-ac8f-e36c2b239431" name="Default Changelist" comment="Fixing paths, update composer.json and composer.lock">
+    <list default="true" id="6b32c57a-3824-424d-ac8f-e36c2b239431" name="Default Changelist" comment="Removed the getIterator methods, the PathCollection is new implementing Iterator directly">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Generator/Schema/Importer/SchemaToDb.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Generator/Schema/Importer/SchemaToDb.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Generator/Vo/PropelConfigBuildVo.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Generator/Vo/PropelConfigBuildVo.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -314,7 +315,8 @@
     <MESSAGE value="Removed tidy ext dependency" />
     <MESSAGE value="Removed unused code" />
     <MESSAGE value="Fixing paths, update composer.json and composer.lock" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixing paths, update composer.json and composer.lock" />
+    <MESSAGE value="Removed the getIterator methods, the PathCollection is new implementing Iterator directly" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed the getIterator methods, the PathCollection is new implementing Iterator directly" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1027" y="94" width="654" height="729" key="#PHP" timestamp="1609325959711">
@@ -427,10 +429,10 @@
       <screen x="35" y="27" width="1565" height="873" />
     </state>
     <state width="606" height="446" key="SwitcherDM/35.27.1565.873@35.27.1565.873" timestamp="1608328916649" />
-    <state x="889" y="154" width="808" height="555" key="Vcs.Push.Dialog.v2" timestamp="1610033872217">
+    <state x="885" y="128" width="808" height="555" key="Vcs.Push.Dialog.v2" timestamp="1610046097267">
       <screen x="0" y="0" width="3840" height="2160" />
     </state>
-    <state x="889" y="154" width="808" height="555" key="Vcs.Push.Dialog.v2/0.0.3840.2160@0.0.3840.2160" timestamp="1610033872217" />
+    <state x="885" y="128" width="808" height="555" key="Vcs.Push.Dialog.v2/0.0.3840.2160@0.0.3840.2160" timestamp="1610046097267" />
     <state x="412" y="184" width="800" height="556" key="Vcs.Push.Dialog.v2/35.27.1565.873@35.27.1565.873" timestamp="1608076276042" />
     <state x="1536" y="1064" width="2304" height="1065" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1609614733866">
       <screen x="0" y="0" width="3840" height="2160" />
@@ -462,10 +464,10 @@
     </state>
     <state x="2227" y="568" width="958" height="770" key="com.jetbrains.php.test.PhpNewTestDialog/0.0.3840.2160@0.0.3840.2160" timestamp="1609599595840" />
     <state x="383" y="148" width="1217" height="665" key="com.jetbrains.php.test.PhpNewTestDialog/35.27.1565.873@35.27.1565.873" timestamp="1609022796115" />
-    <state x="1335" y="690" width="1686" height="1436" key="find.popup" timestamp="1610045797378">
+    <state x="1335" y="690" width="1686" height="1436" key="find.popup" timestamp="1610046047310">
       <screen x="0" y="0" width="3840" height="2160" />
     </state>
-    <state x="1335" y="690" width="1686" height="1436" key="find.popup/0.0.3840.2160@0.0.3840.2160" timestamp="1610045797378" />
+    <state x="1335" y="690" width="1686" height="1436" key="find.popup/0.0.3840.2160@0.0.3840.2160" timestamp="1610046047310" />
     <state x="579" y="306" width="687" height="580" key="find.popup/35.27.1565.873@35.27.1565.873" timestamp="1609028323248" />
     <state x="596" y="235" width="432" height="455" key="refactoring.ChangeSignatureDialog" timestamp="1608723876918">
       <screen x="35" y="27" width="1565" height="873" />
