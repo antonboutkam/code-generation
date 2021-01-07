@@ -11,7 +11,7 @@ use Generator\IPropelConfigBuildVo;
 use Generator\ISiteStructureConfig;
 use InvalidArgumentException;
 
-class SystemBuildConfig implements IConfigBuildVo, ISiteStructureConfig, IApiStructureConfig, IPropelConfigBuildVo, IBaseBuildVo {
+class SystemBuildConfig implements IConfigBuildVo, ISiteStructureConfig, IApiStructureConfig, IPropelConfigBuildVo {
     private $title;
     private $api_title;
     private $support_name;

@@ -2,10 +2,9 @@
 
 namespace Generator\Generators\Build;
 
-use Generator\IBuildFolderOwner;
 use Generator\Generators\IBuildFolderOwner;
 use Generator\Generators\IPropelConfigBuildVo;
-use Cli\Tools\VO\SystemBuildConfig;
+use Generator\Vo\SystemBuildConfig;
 use Core\InlineTemplate;
 use Exception\LogicException;
 use Hi\Helpers\DirectoryStructure;

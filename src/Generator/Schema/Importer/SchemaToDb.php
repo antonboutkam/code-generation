@@ -59,7 +59,7 @@ final class SchemaToDb {
 
         $this->reportFiles($oSchemaPathCollection, $output);
 
-        foreach ($oSchemaPathCollection->getIterator() as $oSchemaPath) {
+        foreach ($oSchemaPathCollection as $oSchemaPath) {
             $output->writeln("<comment>Import schema structure  ---------------->  {$oSchemaPath}</comment>");
             $this->createModels(Schema::fromPath($oSchemaPath), $output);
         }
