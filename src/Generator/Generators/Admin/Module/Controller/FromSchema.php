@@ -1,6 +1,8 @@
 <?php
 namespace Generator\Generators\Admin\Module\Controller;
 
+use Cli\CodeGen\ModuleConfigfile;
+use Cli\CodeGen\ModuleMenu;
 use DOMDocument;
 use Exception\LogicException;
 use Helper\Schema\Database;
@@ -11,7 +13,7 @@ use Generator\Generators\Admin\Module\Controller as Generators;
 
 
 
-final class FromSchema extends BaseCodeGen
+final class FromSchema
 {
 
     private string $sSchemaLocation;

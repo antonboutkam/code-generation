@@ -25,8 +25,6 @@ class TestGeneratorTest extends TestCase
 
         $sNeedle = '';
         $this->assertStringContainsString($sNeedle, $sGenerate);
-        echo $sGenerate;
-        exit();
     }
     private function createGenerator(): TestGenerator {
         try

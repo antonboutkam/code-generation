@@ -22,8 +22,11 @@ class ConfigTest extends TestCase {
         $oBaseTestNamespace = PhpNamespace::make('Tests')->extend($oBaseNamespace);
         return Config::create(
             new PlainText("test:command"),
+            new PlainText("test:command"),
+            new PlainText("test:command"),
             $oBaseNamespace->extend('FakeGenerator'),
             $oBaseNamespace->extend('FakeGeneratorConfig'),
+            $oBaseNamespace->extend('FakeCommand'),
             $oBaseNamespace->extend('FakeGeneratorConfigInterface'),
             $oBaseTestNamespace->extend('TestFake'),
             new PropertyCollection()
@@ -34,7 +37,7 @@ class ConfigTest extends TestCase {
 
         $oConfig = $this->createConfig();
         $sExpected = 'Generator\\Generators\\Generator\\Fake\\FakeGeneratorConfigInterface';
-        $this->assertEquals($sExpected, $oConfig->getConfigInterfaceName(), $oConfig->getConfigInterfaceName());
+        $this->assertEquals($sExpected, "{$oConfig->getConfigInterfaceName()}", "{$oConfig->getConfigInterfaceName()}");
     }
 
     public function testGetWorkerClassName() {
@@ -46,7 +49,10 @@ class ConfigTest extends TestCase {
 
     public function testGetProperties() {
         $oConfig = $this->createConfig();
-        $this->assertEquals([], $oConfig->getProperties(), 'Expected an empty array');
+        $this->assertInstanceOf(
+            PropertyCollection::class,
+            $oConfig->getProperties(),
+            'Expected a Property collection');
     }
 
     public function testGetConfigClassName() {

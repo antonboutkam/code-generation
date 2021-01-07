@@ -94,6 +94,8 @@ EOT
             $sGetter = 'get' . ucfirst("{$property->getName()}()");
             $oPlainText->addLn('// $this->config->' . $sGetter);
         }
+        $oPlainText->addLn('return new PlainText("");');
+
         return $oPlainText;
     }
 }

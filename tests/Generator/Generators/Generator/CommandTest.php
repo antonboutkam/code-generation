@@ -20,20 +20,6 @@ use Symfony\Component\Console\Tester\CommandTester;
 class CommandTest extends TestCase
 {
 
-    public function testInitialize()
-    {
-
-    }
-
-    public function testInteract()
-    {
-
-    }
-
-    public function testConfigure()
-    {
-
-    }
 
     /**
      * @throws InvalidArgumentException
@@ -67,7 +53,7 @@ class CommandTest extends TestCase
                     'type' => 'bool',
                 ]),
                 Property::create([
-                    'name' => 'createHostsLocal',
+                    'name' => 'createArray',
                     'type' => PrimitiveArray::class,
                 ]),
             ]))

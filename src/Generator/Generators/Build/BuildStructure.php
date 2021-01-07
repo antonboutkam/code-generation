@@ -3,8 +3,7 @@
 namespace Generator\Generators\Build;
 
 use Generator\IBuildFolderOwner;
-use Generator\Generators\IBuildFolderOwner;
-use Generator\Generators\IPropelConfigBuildVo;
+use Generator\IPropelConfigBuildVo;
 use Cli\Tools\VO\SystemBuildConfig;
 use Core\InlineTemplate;
 use Exception\LogicException;

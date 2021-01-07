@@ -47,18 +47,8 @@ class GenerateDatasources
         echo $sCommand . PHP_EOL;
         echo shell_exec($sCommand);
     }
-    private function installPackage($sMethod, $aDataSource)
-    {
 
-        $sCommand = 'cd ' . $this->getNodeRoot($sMethod, $aDataSource) .
-                    ' && npm install ' . $this->getPluginPath($sMethod, $aDataSource);
-
-        echo "Install package" . PHP_EOL;
-        echo $sCommand . PHP_EOL;
-        echo shell_exec($sCommand);
-    }
-
-    private function makePackageJson(array $aDataSources, string $sDirection)
+    private function makePackageJson(array $aDataSources)
     {
         $sTemplateFile = CommandUtils::getRoot() . "/classes/Cli/Tools/Template/nodered/package.json";
         $sTemplate = file_get_contents($sTemplateFile);
@@ -125,14 +115,4 @@ class GenerateDatasources
         return 'custom-nodes/' . $sNodeName;
     }
 
-
-    private function makeDir(string $sMethod, array $aDataSource)
-    {
-        $sNodeDir = $this->getPluginRoot($sMethod, $aDataSource);
-
-        if (!is_dir($sNodeDir))
-        {
-            mkdir($sNodeDir, 0777, true);
-        }
-    }
 }

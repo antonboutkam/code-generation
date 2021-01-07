@@ -5,12 +5,13 @@ namespace Test\Generator\Generators\Admin\Module\Controller\Edit;
 use Generator\Generators\Admin\Module\Controller\Overview\Generator;
 use Hurah\Types\Type;
 
-use Generator\Generators\Admin\Module\Controller\Overview\ConfigGenerator;
+// use Generator\Generators\Admin\Module\Controller\Overview\ConfigGenerator;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Output\ConsoleOutput;
 
-class GeneratorTest extends TestCase {
+class GeneratorTestIncomplete extends TestCase {
 
+    /*
     public function testGenerate() {
 
         $oConfig = ConfigGenerator::create(
@@ -31,4 +32,5 @@ class GeneratorTest extends TestCase {
         $this->assertTrue(strpos($sGenerated, 'class EditController') > 0);
         $this->assertTrue(substr_count($sGenerated, '{') === substr_count($sGenerated, '}'));
     }
+    */
 }
