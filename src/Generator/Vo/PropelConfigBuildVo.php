@@ -3,7 +3,7 @@
 namespace Generator\Vo;
 
 use Hurah\Types\Type\SystemId;
-use Generator\Generators\IPropelConfigBuildVo;
+use Generator\IPropelConfigBuildVo;
 
 class PropelConfigBuildVo implements IPropelConfigBuildVo
 {
