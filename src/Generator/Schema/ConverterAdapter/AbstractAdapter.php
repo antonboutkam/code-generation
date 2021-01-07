@@ -23,7 +23,7 @@ abstract class AbstractAdapter implements IConverterAdapter
     {
         $aOut = ['<?xml version="1.0" encoding="UTF-8"?>'];
         $aOut[] = $this->getContainer($oModuleQuery, $oDataModelQuery, $sCustom, $sXsdLocation);
-        return join(PHP_EOL, $aOut);
+        return trim(join(PHP_EOL, $aOut));
     }
 
     abstract function getContainerAttributes(string $sCustom, string $sXsdLocation): array;
