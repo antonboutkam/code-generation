@@ -43,10 +43,6 @@
         {
             "type": "path",
             "url": "../util"
-        },
-        {
-            "type": "path",
-            "url": "../../data-types"
         }
     ]
 }

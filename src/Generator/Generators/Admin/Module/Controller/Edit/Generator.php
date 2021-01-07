@@ -10,6 +10,7 @@ use Nette\PhpGenerator\PhpNamespace;
 
 final class Generator
 {
+
     function create(Table $oTable)
     {
         echo "Write file " . $this->getBaseFileName($oTable) . PHP_EOL;

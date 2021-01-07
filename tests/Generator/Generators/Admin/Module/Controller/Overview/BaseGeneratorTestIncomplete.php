@@ -2,6 +2,7 @@
 
 namespace Test\Generator\Generators\Admin\Module\Controller\Overview;
 
+
 use Generator\Generators\Admin\Module\Controller\Overview\BaseGenerator;
 use Hurah\Types\Type;
 
@@ -9,7 +10,7 @@ use Generator\Generators\Admin\Module\Controller\Overview\ConfigGenerator;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Output\ConsoleOutput;
 
-class BaseGeneratorTest extends TestCase {
+class BaseGeneratorTestIncomplete extends TestCase {
 
     public function testGenerate() {
 

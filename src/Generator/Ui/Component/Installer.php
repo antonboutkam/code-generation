@@ -16,6 +16,7 @@ use Model\System\DataModel\Model\DataModelQuery;
 use Model\System\DataModel\Model\ModelConstraintQuery;
 use Propel\Runtime\Exception\PropelException;
 use Symfony\Component\Console\Output\OutputInterface;
+use Cli\Database\Helper\Propel;
 
 class Installer
 {
@@ -31,7 +32,7 @@ class Installer
     {
         $oDirectoryStructure = new DirectoryStructure();
 
-        \Cli\Composer\Database\Helper\Propel::includeConfigs($aAnswers['config_dir'], $output);
+        Propel::includeConfigs($aAnswers['config_dir'], $output);
         require_once Utils::makePath($oDirectoryStructure->getVendorDir(), 'autoload.php');
         $oPropelConfigPath =  new Path(Utils::makePath($oDirectoryStructure->getConfigRoot(), $aAnswers['config_dir'], 'propel', 'config.php'));
 

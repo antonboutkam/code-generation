@@ -16,18 +16,18 @@ final class SchemaToDb {
     {
 
         $output->writeln("<info>Files to import:</info>");
-        foreach ($oPathCollection->getIterator() as $oSchemaPath) {
+        foreach ($oPathCollection as $oSchemaPath) {
             if ($output) {
                 $output->writeln("<comment>Result <info>{$oSchemaPath}</info></comment>");
             }
         }
+        $oPathCollection->rewind();
     }
 
     private function recursiveSchemaFinder(PathCollection &$oPathCollection, Path $oSchemaPath, OutputInterface $output):void{
         $oSchema = Schema::fromFilename($oSchemaPath);
         $oPathCollection->add($oSchemaPath);
         $oExternalSchemaIterator = $oSchema->getDatabase()->getExternalSchemas();
-
 
         foreach ($oExternalSchemaIterator as $oExternalSchema) {
 
@@ -39,8 +39,8 @@ final class SchemaToDb {
     }
     private function collectSchemas(IImporterConfig $oConfig, OutputInterface $output):PathCollection {
         $oSchemaPathCollection = new PathCollection();
-        $oSchemaIterator = $oConfig->getSchemaFiles()->getIterator();
-        foreach ($oSchemaIterator as $oSchemaPath) {
+
+        foreach ($oConfig->getSchemaFiles() as $oSchemaPath) {
             $output->writeln("<comment>Starting recursive external schema seeker from  ---------------->  {$oSchemaPath}</comment>");
             $this->recursiveSchemaFinder($oSchemaPathCollection, $oSchemaPath, $output);
         }
@@ -59,15 +59,8 @@ final class SchemaToDb {
 
         $this->reportFiles($oSchemaPathCollection, $output);
 
-        foreach ($oSchemaPathCollection as $oSchemaPath) {
-            $output->writeln("<comment>Import schema structure  ---------------->  {$oSchemaPath}</comment>");
-            $this->createModels(Schema::fromPath($oSchemaPath), $output);
-        }
-
-        foreach ($oSchemaPathCollection->getIterator() as $oSchemaPath) {
-            $output->writeln("<comment>Import foreign keys  ---------------->  {$oSchemaPath}</comment>");
-            $this->makeForeignKeyConstraints(Schema::fromPath($oSchemaPath), $output);
-        }
+        $this->importExternalSchemas($oSchemaPathCollection, $output);
+        $this->makeForeignKeys($oSchemaPathCollection, $output);
 
         // Move back to the dir where we started.
         chdir($sPrevDir);
@@ -155,5 +148,32 @@ final class SchemaToDb {
 
             }
         }
+    }
+
+    /**
+     * @param PathCollection $oSchemaPathCollection
+     * @param OutputInterface $output
+     * @return Path
+     */
+    private function importExternalSchemas(PathCollection $oSchemaPathCollection, OutputInterface $output): void
+    {
+        foreach ($oSchemaPathCollection as $oSchemaPath) {
+            $output->writeln("<comment>Import schema structure  ---------------->  {$oSchemaPath}</comment>");
+            $this->createModels(Schema::fromPath($oSchemaPath), $output);
+        }
+        $oSchemaPathCollection->rewind();
+    }
+
+    /**
+     * @param PathCollection $oSchemaPathCollection
+     * @param OutputInterface $output
+     */
+    private function makeForeignKeys(PathCollection $oSchemaPathCollection, OutputInterface $output): void
+    {
+        foreach ($oSchemaPathCollection as $oSchemaPath) {
+            $output->writeln("<comment>Import foreign keys  ---------------->  {$oSchemaPath}</comment>");
+            $this->makeForeignKeyConstraints(Schema::fromPath($oSchemaPath), $output);
+        }
+        $oSchemaPathCollection->rewind();
     }
 }
