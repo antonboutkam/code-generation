@@ -1,7 +1,7 @@
 <?php
 namespace Generator\Generators\System;
 
-use Cli\Tools\VO\SystemBuildConfig;
+use Generator\Vo\SystemBuildConfig;
 use Core\Environment;
 use Core\Mqtt;
 

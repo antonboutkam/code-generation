@@ -1,7 +1,7 @@
 <?php
 namespace Generator\Generators\System;
 
-use Cli\Tools\VO\SystemBuildConfig;
+use Generator\Vo\SystemBuildConfig;
 use Core\InlineTemplate;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Input\ArrayInput;
