@@ -7,16 +7,31 @@ use Exception\LogicException;
 use Helper\ApiXsd\Schema\Api;
 use Helper\Schema\Database;
 use Hi\Helpers\DirectoryStructure;
+use Symfony\Component\Console\Output\ConsoleOutput;
 use Symfony\Component\Console\Output\OutputInterface;
 
 class CrudsFromSchema
 {
     private string $schemaLocation;
+    private OutputInterface $output;
+
+    private function output(string $sMessage)
+    {
+        $this->output->writeln($sMessage);
+    }
 
     public function __construct(string $sSchemaLocation, OutputInterface $oOutput = null)
     {
         $this->schemaLocation = $sSchemaLocation;
-        parent::__construct($oOutput);
+        if($oOutput)
+        {
+            $this->output = $oOutput;
+        }
+        else
+        {
+            $this->output = new ConsoleOutput();
+        }
+
     }
 
     public function run()

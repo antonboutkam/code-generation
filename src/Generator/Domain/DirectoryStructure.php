@@ -18,9 +18,10 @@ class DirectoryStructure
 
     function create()
     {
+
         $oDirectoryStructure = new \Hi\Helpers\DirectoryStructure();
 
-
+        
         $sDestinationDirectory =  $this->oDomainStructureConfig->getInstallDir('live');
         $sSourceDirectory = Utils::makePath($oDirectoryStructure->getSystemDir(true), 'build', '_skel', 'domain_structure', "tree");
 
