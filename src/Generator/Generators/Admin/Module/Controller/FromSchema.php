@@ -1,9 +1,8 @@
 <?php
 namespace Generator\Generators\Admin\Module\Controller;
 
-use Generator\Generators\Admin\Module\Config\ModuleConfigfile;
+use Generator\Generators\Admin\Module\Config\ModuleConfigFile;
 use Generator\Generators\Admin\Module\Menu\ModuleMenu;
-
 use DOMDocument;
 use Exception\LogicException;
 use Helper\Schema\Database;
@@ -11,8 +10,6 @@ use Hi\Helpers\DirectoryStructure;
 use Propel\Runtime\Exception\PropelException;
 use Symfony\Component\Console\Output\OutputInterface;
 use Generator\Generators\Admin\Module\Controller as Generators;
-
-
 
 final class FromSchema
 {

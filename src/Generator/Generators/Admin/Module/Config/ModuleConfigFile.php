@@ -1,5 +1,4 @@
 <?php
-
 namespace Generator\Generators\Admin\Module\Config;
 
 use AdminModules\ModuleConfig;
@@ -10,7 +9,7 @@ use Nette\PhpGenerator\ClassType;
 use Nette\PhpGenerator\PhpNamespace;
 use Propel\Runtime\Exception\PropelException;
 
-final class ModuleConfigfile
+final class ModuleConfigFile
 {
     /**
      * @param Table $oTable
