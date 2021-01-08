@@ -2,8 +2,8 @@
 
 namespace Generator\Site\Builder;
 
-use Cli\CodeGen\System\Helper\Skeleton;
-use Cli\CodeGen\System\Helper\Target;
+use Generator\Generators\System\Helper\Skeleton;
+use Generator\Generators\Helper\Target;
 use Generator\ISiteStructureConfig;
 use Throwable;
 use Twig_Error_Loader;

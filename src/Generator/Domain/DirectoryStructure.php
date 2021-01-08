@@ -1,7 +1,7 @@
 <?php
 namespace Generator\Domain;
 
-use Cli\CodeGen\System\Helper\Skeleton;
+use Generator\Generators\System\Helper\Skeleton;
 use Hurah\Types\Type\Path;
 use Core\Utils;
 use Generator\IDomainStructureConfig;

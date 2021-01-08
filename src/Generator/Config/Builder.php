@@ -1,7 +1,7 @@
 <?php
 namespace Generator\Config;
 
-use Cli\CodeGen\System\Helper\Skeleton;
+use Generator\Generators\System\Helper\Skeleton;
 use Generator\IConfigBuildVo;
 use Core\Utils;
 use Hi\Helpers\DirectoryStructure;

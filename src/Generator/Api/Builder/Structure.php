@@ -1,7 +1,7 @@
 <?php
 namespace Generator\Api\Builder;
 
-use Cli\CodeGen\System\Helper\Skeleton;
+use Generator\Generators\System\Helper\Skeleton;
 use Generator\IApiStructureConfig;
 use Throwable;
 use Twig_Error_Loader;

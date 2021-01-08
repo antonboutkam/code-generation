@@ -1,8 +1,8 @@
 <?php
 namespace Generator\Schema\Builder;
 
-use Cli\CodeGen\System\Helper\Skeleton;
-use Cli\CodeGen\System\Helper\Target;
+use Generator\Generators\System\Helper\Skeleton;
+use Generator\Generators\System\Helper\Target;
 use Hi\Helpers\DirectoryStructure;
 
 final class SchemaBuilder {

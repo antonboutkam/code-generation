@@ -2,22 +2,16 @@
 
 namespace Generator\Generators\Crud\CollectionType;
 
-use Cli\CodeGen\Helpers\Crud;
+use Generator\Helper\Crud;
 use Crud\IField;
 use Helper\Schema\Table;
 use Nette\PhpGenerator\ClassType;
 use Nette\PhpGenerator\PhpNamespace;
-use Symfony\Component\Console\Output\OutputInterface;
-use Generator\Generators\BaseGenerator;
 
 final class CrudFieldCollectionTypeGenerator
 {
     public const INTERFACE_NAME = 'CollectionField';
 
-    public function __construct(OutputInterface $oOutput = null)
-    {
-        parent::__construct($oOutput);
-    }
 
     public function create(Table $oTable)
     {
