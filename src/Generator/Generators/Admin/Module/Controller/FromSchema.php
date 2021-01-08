@@ -1,8 +1,9 @@
 <?php
 namespace Generator\Generators\Admin\Module\Controller;
 
-use Cli\CodeGen\ModuleConfigfile;
-use Cli\CodeGen\ModuleMenu;
+use Generator\Generators\Admin\Module\Config\ModuleConfigfile;
+use Generator\Generators\Admin\Module\Menu\ModuleMenu;
+
 use DOMDocument;
 use Exception\LogicException;
 use Helper\Schema\Database;
@@ -23,7 +24,6 @@ final class FromSchema
     {
         $this->sSchemaLocation = $sSchemaLocation;
         $this->sSecondSchemaLocation = $sSecondSchemaLocation;
-        parent::__construct($oOutput);
     }
 
     /**

@@ -113,6 +113,6 @@ final class ApiInfo
         }
 
         echo "Write file: " . $sFileLocation . PHP_EOL;
-        file_put_contents($sFileLocation, '<?php/*** @unfixed**/' . PHP_EOL . $sTemplate);
+        file_put_contents($sFileLocation, '<?php' . PHP_EOL . $sTemplate);
     }
 }

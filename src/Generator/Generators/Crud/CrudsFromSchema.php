@@ -4,6 +4,11 @@ namespace Generator\Generators\Crud;
 
 use DOMDocument;
 use Exception\LogicException;
+use Generator\Generators\Crud\CollectionType\CrudFieldCollectionTypeGenerator;
+use Generator\Generators\Crud\Field\CrudFieldGenerator;
+use Generator\Generators\Crud\FieldIterator\CrudFieldIteratorGenerator;
+use Generator\Generators\Crud\Info\CrudInfo;
+use Generator\Generators\Crud\Manager\CrudManagerGenerator;
 use Helper\ApiXsd\Schema\Api;
 use Helper\Schema\Database;
 use Hi\Helpers\DirectoryStructure;
@@ -90,27 +95,27 @@ class CrudsFromSchema
                 }
 
                 $this->output("Creating cruds for <info>{$oTable->getName()}</info>");
-                $oCrudInfo = new CrudInfo($this->getOutputInterface());
+                $oCrudInfo = new CrudInfo($this->output);
                 $oCrudInfo->create($oTable);
 
                 $this->output("Making directory structure <info>{$oTable->getName()}</info>");
-                $oCrudDirectoryStructure = new DirectoryStructure($this->getOutputInterface());
+                $oCrudDirectoryStructure = new \Generator\Generators\Crud\DirectoryStructure();
                 $oCrudDirectoryStructure->create($oTable);
 
                 $this->output("Making crud manager classes <info>{$oTable->getName()}</info>");
-                $oCrudGenerator = new CrudManagerGenerator($this->getOutputInterface());
+                $oCrudGenerator = new CrudManagerGenerator($this->output);
                 $oCrudGenerator->create($oTable, $oApi);
 
                 $this->output("Making crud field iterator interfaces <info>{$oTable->getName()}</info>");
-                $oCrudGenerator = new CrudFieldIteratorGenerator($this->getOutputInterface());
+                $oCrudGenerator = new CrudFieldIteratorGenerator($this->output);
                 $oCrudGenerator->create($oTable);
 
                 $this->output("Making crud field collection classes <info>{$oTable->getName()}</info>");
-                $oCrudGenerator = new CrudFieldCollectionTypeGenerator($this->getOutputInterface());
+                $oCrudGenerator = new CrudFieldCollectionTypeGenerator();
                 $oCrudGenerator->create($oTable);
 
                 $this->output("Creating crud field objects <info>{$oTable->getName()}</info>");
-                $oCrudGenerator = new CrudFieldGenerator($this->getOutputInterface());
+                $oCrudGenerator = new CrudFieldGenerator($this->output);
                 $oCrudGenerator->create($oTable, $oApi);
             }
         }

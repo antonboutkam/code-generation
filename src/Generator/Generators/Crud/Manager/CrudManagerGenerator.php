@@ -3,29 +3,34 @@
 namespace Generator\Generators\Crud\Manager;
 
 use Cli\Tools\CommandUtils;
-use Hurah\Types\Type\Date;
-use Hurah\Types\Type\PhpNamespace;
-use Core\QueryMapper;
 use Core\Utils;
-use Crud\FieldCollection;
 use Crud\FormManager;
 use Crud\IApiExposable;
 use Crud\IConfigurableCrud;
-use Crud\ICrudFieldIterator;
 use Exception\LogicException;
+use Generator\Generators\Crud\FieldIterator\CrudFieldIteratorGenerator;
 use Helper\ApiXsd\Schema\Api;
 use Helper\Schema\Module;
 use Helper\Schema\Table;
+use Hurah\Types\Type\PhpNamespace;
 use Nette\PhpGenerator;
 use Propel\Runtime\ActiveQuery\ModelCriteria;
 use Propel\Runtime\Map\TableMap;
+use Symfony\Component\Console\Output\ConsoleOutput;
 use Symfony\Component\Console\Output\OutputInterface;
 
 final class CrudManagerGenerator
 {
+    private OutputInterface $output;
 
     public function __construct(OutputInterface $oOutput = null)
     {
+        if ($oOutput) {
+            $this->output = $oOutput;
+        } else {
+            $this->output = new ConsoleOutput();
+        }
+
     }
 
     public function create(Table $oTable, Api $oApi = null)
@@ -68,69 +73,12 @@ final class CrudManagerGenerator
         $oClass->addComment("application requirements.  This class will only be generated as");
         $oClass->addComment("long as it does not already exist in the output directory.");
         $oNamespace->add($oClass);
-        file_put_contents($sFilePath, '<?php/*** @unfixed**/' . PHP_EOL . (string)$oNamespace);
+        file_put_contents($sFilePath, '<?php ' . PHP_EOL . (string)$oNamespace);
     }
 
-    private function makeCrudApiTrait(Table $oTable, Api $oApi = null)
+    private function output(string $sMessage)
     {
-        $sNamespace = $oTable->getCrudNamespace();
-        $oNamespace = new PhpGenerator\PhpNamespace($sNamespace);
-        $oGeneratedTrait = new PhpGenerator\ClassType('CrudApiTrait');
-
-        $oGeneratedTrait->addComment("This trait is automatically generated, do not modify manually.");
-        $oGeneratedTrait->addComment("Add custom code to the model class or add extra traits if you need to override or add functionality.");
-        $oGeneratedTrait->setType(PhpGenerator\ClassType::TYPE_TRAIT);
-
-        $oGetDocumentationUrl = $oGeneratedTrait->addMethod('getDocumentationUrl');
-        $oGetDocumentationUrl->setReturnType('string');
-        $oGetDocumentationUrl->setBody('return "' . $oApi->getDocumentation_url() . '";');
-
-        $oGetDocumentationUrl = $oGeneratedTrait->addMethod('getApiVersion');
-        $oGetDocumentationUrl->setReturnType('string');
-        $oGetDocumentationUrl->setBody('return "' . $oApi->getApiVersion() . '";');
-
-        $oGetApiUrl = $oGeneratedTrait->addMethod('getApiUrl');
-        $oGetApiUrl->setReturnType('string');
-        $oGetApiUrl->setBody('return "' . $oApi->getEndpoint_url() . '";');
-
-        $oGetApiUrl = $oGeneratedTrait->addMethod('getApiNamespace');
-        $oGetApiUrl->setReturnType('string');
-        $oGetApiUrl->setBody('return "' . $oApi->getApiNamespace() . '";');
-
-        $oNamespace->add($oGeneratedTrait);
-
-        $sFilePath = CommandUtils::getRoot() . '/classes/Crud/' . $oTable->getCrudDir() . '/CrudApiTrait.php';
-
-        $this->output("Creating crud api trait <info>$sFilePath</info>");
-
-        file_put_contents($sFilePath, '<?php/*** @unfixed**/' . PHP_EOL . (string)$oNamespace);
-    }
-
-    private function makeCrudTrait(Table $oTable)
-    {
-        $sNamespace = $oTable->getCrudNamespace();
-        $oNamespace = new PhpGenerator\PhpNamespace($sNamespace);
-        $oGeneratedTrait = new PhpGenerator\ClassType('CrudTrait');
-        $oGeneratedTrait->setType(PhpGenerator\ClassType::TYPE_TRAIT);
-
-        $method = $oGeneratedTrait->addMethod('getTags');
-        $aParts = explode('\\', $sNamespace);
-        unset($aParts[0], $aParts[1]);
-        $method->setBody('return ["' . join('", "', $aParts) . '"];');
-
-        $oNamespace->add($oGeneratedTrait);
-
-        $sFilePath = CommandUtils::getRoot() . '/classes/Crud/' . $oTable->getCrudDir() . '/CrudTrait.php';
-
-        if (!file_exists($sFilePath)) {
-            $this->output("Creating crud trait " . $sFilePath);
-
-            file_put_contents($sFilePath, '<?php/*** @unfixed**/' . PHP_EOL . (string)$oNamespace);
-        }
-        else
-        {
-            $this->output("Skipping crud trait, already existed " . $sFilePath);
-        }
+        $this->output->writeln($sMessage);
     }
 
     private function makeBaseManager(Table $oTable, Api $oApi = null)
@@ -148,7 +96,6 @@ final class CrudManagerGenerator
         $oGeneratedManager->setAbstract();
         $oGeneratedManager->addComment("This class is automatically generated, do not modify manually.");
         $oGeneratedManager->addComment("Modify $sModelClass instead if you need to override or add functionality.");
-        $oGeneratedManager->addComment($this->getCommentExtra());
 
         $oGeneratedManager->setExtends(FormManager::class);
 
@@ -373,22 +320,7 @@ final class CrudManagerGenerator
 
         $sDirPath = CommandUtils::getRoot() . '/classes/Crud/' . $oTable->getCrudDir() . '/' . $oTable->getPhpName() . '/Base/' . $sClassName . '.php';
 
-        file_put_contents($sDirPath, '<?php/*** @unfixed**/' . PHP_EOL . (string)$oNamespace);
-    }
-
-    private function getSaveBody(string $sModelClass): string
-    {
-        $aOut = [];
-        $aOut[] = "\$o{$sModelClass} = \$this->getModel(\$aData);";
-        $aOut[] = PHP_EOL;
-        $aOut[] = " if(!empty(\$o{$sModelClass}))";
-        $aOut[] = " {";
-        $aOut[] = "     \$o{$sModelClass} = \$this->fillVo(\$aData, \$o{$sModelClass});";
-        $aOut[] = "     \$o{$sModelClass}->save();";
-        $aOut[] = " }";
-        $aOut[] = "return \$o{$sModelClass};";
-
-        return join(PHP_EOL, $aOut);
+        file_put_contents($sDirPath, '<?php' . PHP_EOL . (string)$oNamespace);
     }
 
     private function getModelBody(string $sModelClass, string $sQueryClass, Table $oTable): string
@@ -410,6 +342,21 @@ final class CrudManagerGenerator
         $aOut[] = "         \$o{$sModelClass} = \$this->fillVo(\$aData, \$o{$sModelClass});";
         $aOut[] = "     }";
         $aOut[] = "}";
+        $aOut[] = "return \$o{$sModelClass};";
+
+        return join(PHP_EOL, $aOut);
+    }
+
+    private function getSaveBody(string $sModelClass): string
+    {
+        $aOut = [];
+        $aOut[] = "\$o{$sModelClass} = \$this->getModel(\$aData);";
+        $aOut[] = PHP_EOL;
+        $aOut[] = " if(!empty(\$o{$sModelClass}))";
+        $aOut[] = " {";
+        $aOut[] = "     \$o{$sModelClass} = \$this->fillVo(\$aData, \$o{$sModelClass});";
+        $aOut[] = "     \$o{$sModelClass}->save();";
+        $aOut[] = " }";
         $aOut[] = "return \$o{$sModelClass};";
 
         return join(PHP_EOL, $aOut);
@@ -442,5 +389,65 @@ final class CrudManagerGenerator
 
         $aOut[] = "return \$oModel;";
         return join(PHP_EOL, $aOut);
+    }
+
+    private function makeCrudTrait(Table $oTable)
+    {
+        $sNamespace = $oTable->getCrudNamespace();
+        $oNamespace = new PhpGenerator\PhpNamespace($sNamespace);
+        $oGeneratedTrait = new PhpGenerator\ClassType('CrudTrait');
+        $oGeneratedTrait->setType(PhpGenerator\ClassType::TYPE_TRAIT);
+
+        $method = $oGeneratedTrait->addMethod('getTags');
+        $aParts = explode('\\', $sNamespace);
+        unset($aParts[0], $aParts[1]);
+        $method->setBody('return ["' . join('", "', $aParts) . '"];');
+
+        $oNamespace->add($oGeneratedTrait);
+
+        $sFilePath = CommandUtils::getRoot() . '/classes/Crud/' . $oTable->getCrudDir() . '/CrudTrait.php';
+
+        if (!file_exists($sFilePath)) {
+            $this->output("Creating crud trait " . $sFilePath);
+
+            file_put_contents($sFilePath, '<?php' . PHP_EOL . (string)$oNamespace);
+        } else {
+            $this->output("Skipping crud trait, already existed " . $sFilePath);
+        }
+    }
+
+    private function makeCrudApiTrait(Table $oTable, Api $oApi = null)
+    {
+        $sNamespace = $oTable->getCrudNamespace();
+        $oNamespace = new PhpGenerator\PhpNamespace($sNamespace);
+        $oGeneratedTrait = new PhpGenerator\ClassType('CrudApiTrait');
+
+        $oGeneratedTrait->addComment("This trait is automatically generated, do not modify manually.");
+        $oGeneratedTrait->addComment("Add custom code to the model class or add extra traits if you need to override or add functionality.");
+        $oGeneratedTrait->setType(PhpGenerator\ClassType::TYPE_TRAIT);
+
+        $oGetDocumentationUrl = $oGeneratedTrait->addMethod('getDocumentationUrl');
+        $oGetDocumentationUrl->setReturnType('string');
+        $oGetDocumentationUrl->setBody('return "' . $oApi->getDocumentation_url() . '";');
+
+        $oGetDocumentationUrl = $oGeneratedTrait->addMethod('getApiVersion');
+        $oGetDocumentationUrl->setReturnType('string');
+        $oGetDocumentationUrl->setBody('return "' . $oApi->getApiVersion() . '";');
+
+        $oGetApiUrl = $oGeneratedTrait->addMethod('getApiUrl');
+        $oGetApiUrl->setReturnType('string');
+        $oGetApiUrl->setBody('return "' . $oApi->getEndpoint_url() . '";');
+
+        $oGetApiUrl = $oGeneratedTrait->addMethod('getApiNamespace');
+        $oGetApiUrl->setReturnType('string');
+        $oGetApiUrl->setBody('return "' . $oApi->getApiNamespace() . '";');
+
+        $oNamespace->add($oGeneratedTrait);
+
+        $sFilePath = CommandUtils::getRoot() . '/classes/Crud/' . $oTable->getCrudDir() . '/CrudApiTrait.php';
+
+        $this->output("Creating crud api trait <info>$sFilePath</info>");
+
+        file_put_contents($sFilePath, '<?php' . PHP_EOL . (string)$oNamespace);
     }
 }

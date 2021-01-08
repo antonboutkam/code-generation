@@ -2,24 +2,32 @@
 
 namespace Generator\Generators\Crud\FieldIterator;
 
-use Cli\CodeGen\Helpers\Crud;
-use Hurah\Types\Type\PhpNamespace as PhpNamespaceType;
 use Crud\BaseCrudFieldIterator;
 use Crud\ICrudFieldIterator;
-use Exception\InvalidArgumentException;
+use Generator\Generators\Crud\CollectionType\CrudFieldCollectionTypeGenerator;
+use Generator\Generators\Helper\Crud;
 use Helper\Schema\Table;
+use Hurah\Types\Type\PhpNamespace as PhpNamespaceType;
 use Nette\PhpGenerator\ClassType;
 use Nette\PhpGenerator\Literal;
 use Nette\PhpGenerator\PhpNamespace;
+use Symfony\Component\Console\Output\ConsoleOutput;
 use Symfony\Component\Console\Output\OutputInterface;
 
 final class CrudFieldIteratorGenerator
 {
     public const GENERATED_CLASS_NAME = 'FieldIterator';
 
+    private OutputInterface $output;
+
     public function __construct(OutputInterface $oOutput = null)
     {
-        parent::__construct($oOutput);
+        if ($oOutput) {
+            $this->output = $oOutput;
+        } else {
+            $this->output = new ConsoleOutput();
+        }
+
     }
 
     public function create(Table $oTable)
@@ -52,16 +60,20 @@ final class CrudFieldIteratorGenerator
         $oInterface->addComment(str_repeat(PHP_EOL, 6));
         $oInterface->addComment("You may/can add additional methods to this class to meet your application requirements.");
         $oInterface->addComment("This class will only be generated once / when it does not exist already.");
-        $oInterface->addComment($this->getCommentExtra());
 
         $oNamespace->add($oInterface);
         $this->output("<comment>Saving field iterator user class</comment> <info>{$oFilePath}</info>");
-        $oFilePath->write((string)$oNamespace);
+        $oFilePath->write('<?php' . PHP_EOL . (string)$oNamespace);
     }
 
     public static function makeInterfaceName(Table $oTable): PhpNamespaceType
     {
         return Crud::makeClassName(self::GENERATED_CLASS_NAME, $oTable, Crud::VERSION_USER);
+    }
+
+    private function output(string $sMessage)
+    {
+        $this->output->writeln($sMessage);
     }
 
     private static function makeBaseInterfaceName(Table $oTable): PhpNamespaceType
@@ -173,6 +185,6 @@ final class CrudFieldIteratorGenerator
         $this->output("<comment>Saving class:</comment> <info>{$oFilePath}</info>");
 
         $oNamespace->add($oGeneratedManager);
-        $oFilePath->write((string)$oNamespace);
+        $oFilePath->write('<?php' . PHP_EOL . (string)$oNamespace);
     }
 }

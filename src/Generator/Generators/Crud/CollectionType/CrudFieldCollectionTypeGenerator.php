@@ -7,11 +7,27 @@ use Crud\IField;
 use Helper\Schema\Table;
 use Nette\PhpGenerator\ClassType;
 use Nette\PhpGenerator\PhpNamespace;
+use Symfony\Component\Console\Output\ConsoleOutput;
+use Symfony\Component\Console\Output\OutputInterface;
 
 final class CrudFieldCollectionTypeGenerator
 {
     public const INTERFACE_NAME = 'CollectionField';
 
+    private OutputInterface $output;
+
+    public function __construct(OutputInterface $oOutput = null)
+    {
+        if ($oOutput) {
+            $this->output = $oOutput;
+        } else {
+            $this->output = new ConsoleOutput();
+        }
+    }
+    private function output(string $sMessage)
+    {
+        $this->output->writeln($sMessage);
+    }
 
     public function create(Table $oTable)
     {
@@ -52,7 +68,7 @@ final class CrudFieldCollectionTypeGenerator
         $oNamespace->add($oInterface);
 
         $this->output("Writing 8 <error>{$oFilePath}</error>");
-        $oFilePath->write((string)$oNamespace);
+        $oFilePath->write('<?php' . PHP_EOL . (string)$oNamespace);
     }
 
     private function makeBaseFieldCollectionType(Table $oTable)
@@ -74,6 +90,6 @@ final class CrudFieldCollectionTypeGenerator
         $oBaseInterface->setExtends([IField::class]);
 
         $this->output("Writing 9 <error>{$oFilePath}</error>");
-        $oFilePath->write((string)$oNamespace);
+        $oFilePath->write('<?php' . PHP_EOL . (string)$oNamespace);
     }
 }
