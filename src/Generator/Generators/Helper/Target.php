@@ -2,7 +2,7 @@
 
 namespace Generator\Generators\Helper;
 
-use Core\DataType\Path;
+use Hurah\Types\Type\Path;
 use Core\Utils;
 use Hi\Helpers\DirectoryStructure;
 

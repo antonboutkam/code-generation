@@ -5,7 +5,12 @@
     "license": "MIT",
     "prefer-stable": true,
     "require": {
+<<<<<<< HEAD
         "PHP": "^7.4 || 8.0.*",
+=======
+        "PHP": "^7.4",
+        "nette/php-generator": "^3.5",
+>>>>>>> 5924d387084fe8597b41fd7abeedc54f9826007f
         "hurah/util" : "*",
         "symfony/finder": "^5.2",
         "symfony/console": "^5.2",
@@ -22,9 +27,7 @@
         "ext-libxml": "*",
         "ext-simplexml": "*",
         "ext-intl" : "*",
-        "nette/php-generator": "^3.5",
         "psr/log": "^1.1",
-		"ext-tidy": "*",
         "mihaeu/html-formatter": "*"
 	},
     "require-dev": {
@@ -44,10 +47,6 @@
         {
             "type": "path",
             "url": "../util"
-        },
-        {
-            "type": "path",
-            "url": "../../data-types"
         }
     ]
 }

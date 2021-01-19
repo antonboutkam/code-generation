@@ -28,7 +28,7 @@ class ConfigClassGeneratorTest extends TestCase
         $this->assertStringContainsString($sNeedle, "{$sClassConfig}");
 
         $sNeedle =<<<EOT
-public function create(DnsName \$serverName = 'demo.novum.nu', bool \$autoLogin = false): self
+public static function create(DnsName \$serverName = 'demo.novum.nu', bool \$autoLogin = false): self
 EOT;
 
         $this->assertStringContainsString($sNeedle, "{$sClassConfig}");

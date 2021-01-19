@@ -1,2 +1,12 @@
 /vendor/
 /.phpunit.result.cache
+/src/Generator/Generators/Generator/Fake/ConfigFakeCommand.php
+/src/Generator/Generators/Generator/Fake/ConfigFakeCommandInterface.php
+/src/Generator/Generators/Generator/Fake/FakeCommand.php
+/src/Generator/Generators/Generator/Fake/FakeCommandCommand.php
+/tests/Generator/Generators/Generator/Fake/FakeCommandTest.php
+/src/Generator/Generators/This/Is/Some/SomeCommand.php
+/src/Generator/Generators/This/Is/Some/SomeConfig.php
+/src/Generator/Generators/This/Is/Some/SomeInterface.php
+/src/Generator/Generators/This/Is/Some/SomeWorker.php
+/tests/Generator/Generators/This/Is/Some/Test.php

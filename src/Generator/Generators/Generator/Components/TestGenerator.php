@@ -31,10 +31,12 @@ final class TestGenerator implements GeneratorInterface
         $this->output = $output;
     }
     function generate(): string {
-        $oNamespace = new PhpNamespace($this->oConfig->getTestClassName()
-                                                     ->reduce(1));
-        $oClass = new ClassType($this->oConfig->getTestClassName()
-                                              ->getShortName());
+        $oTestNamespace = $this->oConfig->getTestClassName()->reduce(1);
+        $oNamespace = new PhpNamespace("{$oTestNamespace->getShortName()}");
+
+        $oTestClassName = $this->oConfig->getTestClassName();
+
+        $oClass = new ClassType("{$oTestClassName->getShortName()}");
         $oClass->setExtends(TestCase::class);
         $this->addUseStatements($oNamespace, $this->oConfig);
         $this->addTestGenerateMethod($oClass, $this->oConfig);

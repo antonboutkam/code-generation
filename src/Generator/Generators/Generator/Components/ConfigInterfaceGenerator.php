@@ -30,7 +30,6 @@ final class ConfigInterfaceGenerator extends AbstractConfigGenerator implements 
         $oNamespace = new PhpNamespace($sNamespace);
         $oInterface = new ClassType($this->oConfig->getConfigInterfaceName()->getShortName());
         $oInterface->setInterface();
-        $oNamespace->addUse(OutputInterface::class);
         $this->addUseStatements($oNamespace, $this->oConfig);
         $this->addCreateMethod($oInterface, $this->oConfig);
         $this->addGetters($oInterface, $this->oConfig);
@@ -52,7 +51,7 @@ final class ConfigInterfaceGenerator extends AbstractConfigGenerator implements 
             }
 
             $oNetteProperty = $oCreateMethod->addParameter($oConfigProperty->getName(), $mDefaultValue);
-            $oNetteProperty->setType($oConfigProperty->getType());
+            $oNetteProperty->setType("{$oConfigProperty->getType()}");
         }
     }
     private function addGetters(ClassType $oInterface, ConfigInterface $oConfig) {

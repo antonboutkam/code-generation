@@ -4,14 +4,29 @@ namespace Generator\Generators\Crud;
 
 use Cli\Tools\CommandUtils;
 use Helper\Schema\Table;
+use Symfony\Component\Console\Output\ConsoleOutput;
 use Symfony\Component\Console\Output\OutputInterface;
 
 final class DirectoryStructure
 {
 
+    private OutputInterface $output;
+
+    private function output(string $sMessage)
+    {
+        $this->output->writeln($sMessage);
+    }
+
     public function __construct(OutputInterface $oOutput = null)
     {
-        parent::__construct($oOutput);
+        if($oOutput)
+        {
+            $this->output = $oOutput;
+        }
+        else
+        {
+            $this->output = new ConsoleOutput();
+        }
     }
 
     public function create(Table $oTable)

@@ -23,7 +23,6 @@ class ConfigInterfaceGeneratorTest extends TestCase
 
         $oConfigClassGenerator = $this->createGenerator();
         $sInterfaceContents = $oConfigClassGenerator->generate();
-
         $this->assertStringContainsString('interface FakeGeneratorConfigInterface', $sInterfaceContents);
         $this->assertStringContainsString('public function getAutoLogin(): bool;', $sInterfaceContents);
         $this->assertStringContainsString('public function getServerName(): DnsName;', $sInterfaceContents);

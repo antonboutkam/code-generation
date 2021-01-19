@@ -5,7 +5,6 @@ namespace Generator\Generators\Generator\Components;
 use Generator\Generators\Generator\ConfigInterface;
 use Generator\Generators\GeneratorInterface;
 use Hurah\Types\Type\Php\IsVoid;
-use Hurah\Types\Type\Php\Property;
 use Hurah\Types\Type\PlainText;
 use Nette\PhpGenerator\ClassType;
 use Nette\PhpGenerator\Literal;
@@ -57,7 +56,7 @@ final class ConfigClassGenerator extends AbstractConfigGenerator implements Gene
 
         foreach ($this->oConfig->getProperties() as $property) {
             if (!$property->getType()->isPrimitive()) {
-                $oNamespace->addUse($property->getType());
+                $oNamespace->addUse("{$property->getType()->toPhpNamespace()}");
             }
         }
     }
@@ -67,14 +66,14 @@ final class ConfigClassGenerator extends AbstractConfigGenerator implements Gene
         foreach ($this->oConfig->getProperties() as $property) {
 
             $mDefaultValue = $this->formatDefaultValue($property);
-            if($property->hasDefault())
-            {
+            if ($property->hasDefault()) {
                 $oProperty = $oClass->addProperty($property->getName(), $mDefaultValue);
-            }
-            else
-            {
+            } else {
                 $oProperty = $oClass->addProperty($property->getName());
             }
+
+            echo "{$property->getName()} from type {$property->getType()}" . PHP_EOL;
+            echo "{$property->getName()} adding property {$property->getType()}" . PHP_EOL;
 
             $oProperty->setType("{$property->getType()}");
             $oProperty->setPrivate();

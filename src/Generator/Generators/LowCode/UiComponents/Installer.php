@@ -4,7 +4,7 @@ namespace Generator\Generators\LowCode\UiComponents;
 
 use Cli\Composer\Database\Helper\Propel;
 use Core\Cfg;
-use Core\DataType\Path;
+use Hurah\Types\Type\Path;
 use Core\Utils;
 use Exception\FileNotFoundException;
 use Hi\Helpers\DirectoryStructure;

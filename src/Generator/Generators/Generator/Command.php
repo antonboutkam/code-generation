@@ -2,11 +2,13 @@
 
 namespace Generator\Generators\Generator;
 
+use Generator\Generators\Generator\Helper\DerivedClassName;
 use Generator\Generators\Helper\Command\Question;
 use Generator\Generators\Helper\Command\Util;
 use Hurah\Types\Exception\InvalidArgumentException;
 use Hurah\Types\Exception\RuntimeException;
 use Hurah\Types\Type\Path;
+use Hurah\Types\Type\Php\IsVoid;
 use Hurah\Types\Type\Php\Property;
 use Hurah\Types\Type\Php\PropertyCollection;
 use Hurah\Types\Type\Php\PropertyLabel;
@@ -124,6 +126,8 @@ class Command extends BaseCommand
                 $aTypes
             );
 
+            echo "Got property type $sPropertyType" . PHP_EOL;
+
             $sPropertyLabel = $oQuestionHelper->ask(
                 'Property label',
                 new TypeType(PlainText::class),
@@ -138,7 +142,7 @@ class Command extends BaseCommand
             );
 
             $output->writeln("<comment>Default value, needs to be literal. Add quotes when this value is a string</comment>");
-            $sDefaultValue = $oQuestionHelper->ask('Default value', new TypeType(PlainText::class));
+            $oDefaultValue = $oQuestionHelper->ask('Default value', new TypeType(PlainText::class));
 
             $sAddPropertiesQuestion = "Add another property?";
 
@@ -146,12 +150,13 @@ class Command extends BaseCommand
                 new VarName($sPropertyName),
                 new PropertyLabel($sPropertyLabel),
                 new TypeType($sPropertyType),
-                new PlainText($sDefaultValue),
+                trim("{$oDefaultValue}") ? new PlainText($oDefaultValue) : new IsVoid(),
                 $bIsNullable,
             );
             $oPropertyCollection->add($oProperty);
         }
     }
+
 
     /**
      * @param InputInterface $input
@@ -163,30 +168,22 @@ class Command extends BaseCommand
     function execute(InputInterface $input, OutputInterface $output)
     {
         $aProperties = new PropertyCollection($input->getArgument('properties'));
-
         $sWorkerClassName = $input->getArgument('worker');
-        $sConfigClassName = "Config{$sWorkerClassName}";
-        $sConfigInterfaceName = "Config{$sWorkerClassName}Interface";
-        $sCommandClassName = "{$sWorkerClassName}Command";
-
         $oBaseNamespace = new PhpNamespace($input->getArgument("psr"));
+
         $oWorkerClassName = $oBaseNamespace->extend($sWorkerClassName);
-        $oConfigClassName = $oBaseNamespace->extend($sConfigClassName);
-        $oCommandClassName = $oBaseNamespace->extend($sCommandClassName);
+        $oDerivedClassName = new DerivedClassName($sWorkerClassName, $oBaseNamespace);
 
-        $oConfigInterfaceName = $oBaseNamespace->extend($sConfigInterfaceName);
-
-        $sPartialSr4TestPath = preg_replace("/{$oConfigClassName}/", '/^Generator\\/', '');
-        $oTestClassName = PhpNamespace::make('Test', 'Generators', $sPartialSr4TestPath);
+        $oTestClassName = $oDerivedClassName->makeTestClassName();
 
         $oConfig = Config::create(
             new PlainText($input->getArgument('name')),
             new PlainText($input->getArgument('description')),
             new PlainText($input->getArgument('help')),
             $oWorkerClassName,
-            $oConfigClassName,
-            $oCommandClassName,
-            $oConfigInterfaceName,
+            $oDerivedClassName->makeConfigClassName(),
+            $oDerivedClassName->makeCommandClassName(),
+            $oDerivedClassName->makeConfigInterfaceName(),
             $oTestClassName,
             $aProperties
         );
@@ -222,8 +219,19 @@ class Command extends BaseCommand
     private function makeNamespaceSuggestion(): PhpNamespace
     {
         $oPath = Path::make(getcwd());
-        $oParent = $oPath->dirname(1);
-        return new PhpNamespace("{$oParent->basename()}\\{$oPath->basename()}");
+        $c = 0;
+        $oNamespace = new PhpNamespace();
+        while (!($oPath->extend('composer.json'))->isFile())
+        {
+            if(++$c > 7)
+            {
+                break;
+            }
+            $sDefault = trim($oPath->basename(), '\\');
+            $oNamespace->prepend($sDefault);
+            $oPath = $oPath->dirname();
+        }
+        return $oNamespace->shift();
     }
 
     /**

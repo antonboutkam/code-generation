@@ -10,6 +10,7 @@ use Hurah\Types\Type\DnsName;
 use Hurah\Types\Type\Php\Property;
 use Hurah\Types\Type\Php\PropertyCollection;
 use Hurah\Types\Type\PhpNamespace;
+use Hurah\Types\Type\Primitive\PrimitiveArray;
 use PHPUnit\Framework\TestCase;
 use ReflectionException;
 use Symfony\Component\Console\Input\ArrayInput;
@@ -19,20 +20,6 @@ use Symfony\Component\Console\Tester\CommandTester;
 class CommandTest extends TestCase
 {
 
-    public function testInitialize()
-    {
-
-    }
-
-    public function testInteract()
-    {
-
-    }
-
-    public function testConfigure()
-    {
-
-    }
 
     /**
      * @throws InvalidArgumentException
@@ -51,10 +38,12 @@ class CommandTest extends TestCase
         $commandTester->execute([
             // pass arguments to the helper
             '--dry-run',
-            'name'       => 'test:command',
-            'psr'        => PhpNamespace::make('Generator', 'Generators', 'Generator', 'Fake'),
-            'worker'     => 'FakeCommand',
-            'properties' => (new PropertyCollection([
+            'name'          => 'test:command',
+            'description'   => 'This is not an actual test but unit test output',
+            'help'          => 'Fill in later',
+            'psr'           => PhpNamespace::make('Generator', 'Generators', 'Generator', 'Fake'),
+            'worker'        => 'FakeCommand',
+            'properties'    => (new PropertyCollection([
                 Property::create([
                     'name' => 'serverName',
                     'type' => DnsName::class,
@@ -62,6 +51,10 @@ class CommandTest extends TestCase
                 Property::create([
                     'name' => 'createHostsLocal',
                     'type' => 'bool',
+                ]),
+                Property::create([
+                    'name' => 'createArray',
+                    'type' => PrimitiveArray::class,
                 ]),
             ]))
         ]);

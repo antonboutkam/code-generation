@@ -22,11 +22,20 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/main" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b32c57a-3824-424d-ac8f-e36c2b239431" name="Default Changelist" comment="Reverting external change">
+    <list default="true" id="6b32c57a-3824-424d-ac8f-e36c2b239431" name="Default Changelist" comment="Removed the getIterator methods, the PathCollection is new implementing Iterator directly">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Generator/Vo/PropelConfigBuildVo.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Generator/Vo/PropelConfigBuildVo.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,9 +151,13 @@
       <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/vendor/propel/propel" />
       <path value="$PROJECT_DIR$/vendor/mihaeu/html-formatter" />
+      <path value="$PROJECT_DIR$/vendor/hurah/hurah-installer" />
+      <path value="$PROJECT_DIR$/vendor/react/promise" />
+      <path value="$PROJECT_DIR$/vendor/phpstan/phpdoc-parser" />
     </include_path>
   </component>
   <component name="ProjectId" id="1le5fELGUjTRFa9F7IcK2760s0L" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -158,7 +171,11 @@
     <property name="dumpAutoload /home/anton/Documents/sites/ia-repos/generator/composer.json" value="--no-interaction --ansi --verbose" />
     <property name="dumpAutoload /home/anton/Documents/sites/ia/generator/composer.json" value="--no-interaction --ansi --verbose" />
     <property name="eu.ydp.idea.ts.spec.generator.settings.spec.template" value="import {$ClassName$} from '$TestsRelativePath$../src/$classRelativePath$/$ClassName$';&#10;&#10;describe('$ClassName$', () =&gt; {&#10;  let $ObjName$:$ClassName$;&#10;&#10;  beforeEach(() =&gt; {&#10;    $ObjName$ = new $ClassName$();&#10;  });&#10;&#10;  describe('', () =&gt; {&#10;    it('', () =&gt; {&#10;      // given&#10;&#10;      // when&#10;&#10;      // then&#10;    });&#10;  });&#10;});&#10;" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../core" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+>>>>>>> 5924d387084fe8597b41fd7abeedc54f9826007f
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -175,11 +192,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/tests/Generator/Generators/Generator/Components" />
       <recent name="$PROJECT_DIR$/tests/Generator/Generators/Generator" />
+      <recent name="$PROJECT_DIR$/../innovation-app-core/classes/Generator/Api" />
+      <recent name="$PROJECT_DIR$/tests/Generator/Generators/Generator/Components" />
       <recent name="$PROJECT_DIR$/tests/Generator/Generators" />
       <recent name="$PROJECT_DIR$/tests/Generators" />
-      <recent name="$PROJECT_DIR$/src/Generator/Helper/Command" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/Generator/Helper/Code" />
@@ -189,38 +206,56 @@
       <recent name="$PROJECT_DIR$/tests/Generator/Generators/Admin/Module/Controller/Overview" />
     </key>
   </component>
+<<<<<<< HEAD
   <component name="RunManager" selected="PHPUnit.GeneratorTest.testGenerate">
     <configuration name="GeneratorGeneratorTest.testGenerate" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="Test\Generator\Generators\Generator\Components\GeneratorGeneratorTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Generator/Generators/Generator/Components/GeneratorGeneratorTest.php" method="testGenerate" scope="Method" />
+=======
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="Generator/Generators/Generator/Command.php" />
+    </option>
+  </component>
+  <component name="RunManager" selected="PHPUnit.tests">
+    <configuration name="DerrivedClassNameTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Test\Generator\Generators\Generator\Helper\DerrivedClassNameTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Generator/Generators/Generator/Helper/DerrivedClassNameTest.php" scope="Class" />
+>>>>>>> 5924d387084fe8597b41fd7abeedc54f9826007f
       <method v="2" />
     </configuration>
-    <configuration name="GeneratorTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Test\Generator\Generators\Generator\GeneratorTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Generator/Generators/Generator/GeneratorTest.php" scope="Class" />
+    <configuration name="MenuGeneratorTest.testGenerate (1)" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Test\Generator\Generators\Admin\Module\Menu\MenuGeneratorTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Generator/Generators/Admin/Module/Menu/MenuGeneratorTest.php" method="testGenerate" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="GeneratorTest.testGenerate" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Test\Generator\Generators\Generator\GeneratorTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Generator/Generators/Generator/GeneratorTest.php" method="testGenerate" scope="Method" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestGeneratorTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Test\Generator\Generators\Generator\Components\TestGeneratorTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Generator/Generators/Generator/Components/TestGeneratorTest.php" scope="Class" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestGeneratorTest.testTestGenerator" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Test\Generator\Generators\Generator\Components\TestGeneratorTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Generator/Generators/Generator/Components/TestGeneratorTest.php" method="testTestGenerator" scope="Method" />
+    <configuration name="MenuGeneratorTest.testGenerate" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Menu\MenuGeneratorTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Generator/Generators/Admin/Module/Menu/MenuGeneratorTest.php" method="testGenerate" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="phpunit.xml.dist" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
+    <configuration name="tests" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml.dist" directory="$PROJECT_DIR$/tests" />
+      <method v="2" />
+    </configuration>
+    <configuration name="bootstrap.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/tests/bootstrap.php">
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+<<<<<<< HEAD
         <item itemvalue="PHPUnit.GeneratorTest.testGenerate" />
         <item itemvalue="PHPUnit.GeneratorTest" />
         <item itemvalue="PHPUnit.TestGeneratorTest" />
         <item itemvalue="PHPUnit.TestGeneratorTest.testTestGenerator" />
         <item itemvalue="PHPUnit.GeneratorGeneratorTest.testGenerate" />
+=======
+        <item itemvalue="PHPUnit.tests" />
+        <item itemvalue="PHP Script.bootstrap.php" />
+        <item itemvalue="PHPUnit.DerrivedClassNameTest" />
+        <item itemvalue="PHPUnit.MenuGeneratorTest.testGenerate (1)" />
+        <item itemvalue="PHPUnit.MenuGeneratorTest.testGenerate" />
+>>>>>>> 5924d387084fe8597b41fd7abeedc54f9826007f
       </list>
     </recent_temporary>
   </component>
@@ -304,7 +339,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -313,8 +360,22 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Reverting external change" />
+<<<<<<< HEAD
     <MESSAGE value="workspace.xml" />
     <option name="LAST_COMMIT_MESSAGE" value="workspace.xml" />
+=======
+    <MESSAGE value="Extracted some methods" />
+    <MESSAGE value="Rouning up code generation generator" />
+    <MESSAGE value="Added some code generators" />
+    <MESSAGE value="Removed obsolete unit tests, fixed some namespace names that came from the generator and where incorrect." />
+    <MESSAGE value="Unit test was generated in the wrong location." />
+    <MESSAGE value="Removed tidy ext dependency" />
+    <MESSAGE value="Removed unused code" />
+    <MESSAGE value="Fixing paths, update composer.json and composer.lock" />
+    <MESSAGE value="Removed the getIterator methods, the PathCollection is new implementing Iterator directly" />
+    <MESSAGE value="Path fixeds" />
+    <option name="LAST_COMMIT_MESSAGE" value="Path fixeds" />
+>>>>>>> 5924d387084fe8597b41fd7abeedc54f9826007f
   </component>
   <component name="WindowStateProjectService">
     <state x="457" y="86" width="700" height="752" key="#PHP" timestamp="1608038031022">
@@ -326,18 +387,44 @@
       <screen x="35" y="27" width="1565" height="873" />
     </state>
     <state x="607" y="143" width="411" height="638" key="#com.intellij.ide.util.MemberChooser/35.27.1565.873@35.27.1565.873" timestamp="1608723940374" />
-    <state x="388" y="27" width="838" height="873" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1608803825021">
-      <screen x="35" y="27" width="1565" height="873" />
+    <state x="850" y="-104" width="838" height="873" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1609601210643">
+      <screen x="0" y="0" width="3840" height="2160" />
     </state>
+    <state x="850" y="-104" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.3840.2160@0.0.3840.2160" timestamp="1609601210643" />
     <state x="388" y="27" width="838" height="873" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/35.27.1565.873@35.27.1565.873" timestamp="1608803825021" />
+<<<<<<< HEAD
     <state x="2609" y="796" width="532" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1607948528613">
       <screen x="0" y="0" width="3840" height="2160" />
     </state>
     <state x="2609" y="796" width="532" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.3840.2160@0.0.3840.2160" timestamp="1607948528613" />
     <state x="1089" y="384" width="387" height="317" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1609325368351">
       <screen x="35" y="27" width="1565" height="873" />
+=======
+    <state x="2577" y="588" width="532" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1609624390739">
+      <screen x="0" y="0" width="3840" height="2160" />
     </state>
-    <state x="2586" y="883" width="577" height="311" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.3840.2160@0.0.3840.2160" timestamp="1607948959136" />
+    <state x="2577" y="588" width="532" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.3840.2160@0.0.3840.2160" timestamp="1609624390739" />
+    <state x="2613" y="812" width="395" height="452" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0" timestamp="1610045979065">
+      <screen x="0" y="0" width="3840" height="2160" />
+    </state>
+    <state x="2613" y="812" width="395" height="452" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0/0.0.3840.2160@0.0.3840.2160" timestamp="1610045979065" />
+    <state x="3060" y="813" width="395" height="604" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method1" timestamp="1610045906989">
+      <screen x="0" y="0" width="3840" height="2160" />
+    </state>
+    <state x="3060" y="813" width="395" height="604" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method1/0.0.3840.2160@0.0.3840.2160" timestamp="1610045906989" />
+    <state x="2411" y="915" width="544" height="246" key="#com.jetbrains.php.refactoring.move.namespace.PhpMoveNamespaceDialog#" timestamp="1609625893728">
+      <screen x="0" y="0" width="3840" height="2160" />
+>>>>>>> 5924d387084fe8597b41fd7abeedc54f9826007f
+    </state>
+    <state x="2411" y="915" width="544" height="246" key="#com.jetbrains.php.refactoring.move.namespace.PhpMoveNamespaceDialog#/0.0.3840.2160@0.0.3840.2160" timestamp="1609625893728" />
+    <state x="2317" y="728" width="732" height="620" key="#com.jetbrains.php.refactoring.move.namespace.PhpMoveRelatedNamespacesDialog" timestamp="1609625891505">
+      <screen x="0" y="0" width="3840" height="2160" />
+    </state>
+    <state x="2317" y="728" width="732" height="620" key="#com.jetbrains.php.refactoring.move.namespace.PhpMoveRelatedNamespacesDialog/0.0.3840.2160@0.0.3840.2160" timestamp="1609625891505" />
+    <state x="2578" y="831" width="628" height="311" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1609624845023">
+      <screen x="0" y="0" width="3840" height="2160" />
+    </state>
+    <state x="2578" y="831" width="628" height="311" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.3840.2160@0.0.3840.2160" timestamp="1609624845023" />
     <state x="1089" y="384" width="387" height="317" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/35.27.1565.873@35.27.1565.873" timestamp="1609325368351" />
     <state x="1122" y="399" width="444" height="242" key="ComposerDumpAutoloadDialog" timestamp="1608724289281">
       <screen x="35" y="27" width="1565" height="873" />
@@ -348,10 +435,12 @@
       <screen x="0" y="0" width="3840" height="2160" />
     </state>
     <state x="2700" y="927" width="382" height="261" key="ComposerInitDialogKey/0.0.3840.2160@0.0.3840.2160" timestamp="1607947100018" />
-    <state x="135" y="125" width="1365" height="675" key="DiffContextDialog" timestamp="1608076377803">
-      <screen x="35" y="27" width="1565" height="873" />
+    <state x="1920" y="0" width="960" height="2129" key="DiffContextDialog" timestamp="1610051021870">
+      <screen x="0" y="0" width="3840" height="2160" />
     </state>
+    <state x="1920" y="0" width="960" height="2129" key="DiffContextDialog/0.0.3840.2160@0.0.3840.2160" timestamp="1610051021870" />
     <state x="135" y="125" width="1365" height="675" key="DiffContextDialog/35.27.1565.873@35.27.1565.873" timestamp="1608076377803" />
+<<<<<<< HEAD
     <state x="1119" y="349" width="374" height="517" key="FileChooserDialogImpl" timestamp="1609627233973">
       <screen x="35" y="27" width="1565" height="873" />
     </state>
@@ -385,26 +474,90 @@
       <screen x="35" y="27" width="1565" height="873" />
     </state>
     <state x="2446" y="711" width="841" height="550" key="NewPhpClassDialog/0.0.3840.2160@0.0.3840.2160" timestamp="1607948366464" />
+=======
+    <state x="2639" y="666" width="432" height="484" key="FileChooserDialogImpl" timestamp="1610031182012">
+      <screen x="0" y="0" width="3840" height="2160" />
+    </state>
+    <state x="2639" y="666" width="432" height="484" key="FileChooserDialogImpl/0.0.3840.2160@0.0.3840.2160" timestamp="1610031182012" />
+    <state width="1891" height="1194" key="GridCell.Tab.0.bottom" timestamp="1610033106804">
+      <screen x="0" y="0" width="3840" height="2160" />
+    </state>
+    <state width="1891" height="1194" key="GridCell.Tab.0.bottom/0.0.3840.2160@0.0.3840.2160" timestamp="1610033106804" />
+    <state width="1542" height="278" key="GridCell.Tab.0.bottom/35.27.1565.873@35.27.1565.873" timestamp="1609325205973" />
+    <state width="1891" height="1194" key="GridCell.Tab.0.center" timestamp="1610033106804">
+      <screen x="0" y="0" width="3840" height="2160" />
+    </state>
+    <state width="1891" height="1194" key="GridCell.Tab.0.center/0.0.3840.2160@0.0.3840.2160" timestamp="1610033106804" />
+    <state width="1542" height="278" key="GridCell.Tab.0.center/35.27.1565.873@35.27.1565.873" timestamp="1609325205972" />
+    <state width="1891" height="1194" key="GridCell.Tab.0.left" timestamp="1610033106803">
+      <screen x="0" y="0" width="3840" height="2160" />
+    </state>
+    <state width="1891" height="1194" key="GridCell.Tab.0.left/0.0.3840.2160@0.0.3840.2160" timestamp="1610033106803" />
+    <state width="1542" height="278" key="GridCell.Tab.0.left/35.27.1565.873@35.27.1565.873" timestamp="1609325205972" />
+    <state width="1891" height="1194" key="GridCell.Tab.0.right" timestamp="1610033106804">
+      <screen x="0" y="0" width="3840" height="2160" />
+    </state>
+    <state width="1891" height="1194" key="GridCell.Tab.0.right/0.0.3840.2160@0.0.3840.2160" timestamp="1610033106804" />
+    <state width="1542" height="278" key="GridCell.Tab.0.right/35.27.1565.873@35.27.1565.873" timestamp="1609325205973" />
+    <state width="2275" height="775" key="GridCell.Tab.1.bottom" timestamp="1609624631765">
+      <screen x="0" y="0" width="3840" height="2160" />
+    </state>
+    <state width="2275" height="775" key="GridCell.Tab.1.bottom/0.0.3840.2160@0.0.3840.2160" timestamp="1609624631765" />
+    <state width="2275" height="775" key="GridCell.Tab.1.center" timestamp="1609624631765">
+      <screen x="0" y="0" width="3840" height="2160" />
+    </state>
+    <state width="2275" height="775" key="GridCell.Tab.1.center/0.0.3840.2160@0.0.3840.2160" timestamp="1609624631765" />
+    <state width="2275" height="775" key="GridCell.Tab.1.left" timestamp="1609624631765">
+      <screen x="0" y="0" width="3840" height="2160" />
+    </state>
+    <state width="2275" height="775" key="GridCell.Tab.1.left/0.0.3840.2160@0.0.3840.2160" timestamp="1609624631765" />
+    <state width="2275" height="775" key="GridCell.Tab.1.right" timestamp="1609624631765">
+      <screen x="0" y="0" width="3840" height="2160" />
+    </state>
+    <state width="2275" height="775" key="GridCell.Tab.1.right/0.0.3840.2160@0.0.3840.2160" timestamp="1609624631765" />
+    <state x="2430" y="607" width="985" height="505" key="NewPhpClassDialog" timestamp="1609626170715">
+      <screen x="0" y="0" width="3840" height="2160" />
+    </state>
+    <state x="2430" y="607" width="841" height="550" key="NewPhpClassDialog/0.0.3840.2160@0.0.3840.2160" timestamp="1609626170715" />
+>>>>>>> 5924d387084fe8597b41fd7abeedc54f9826007f
     <state x="428" y="232" width="985" height="505" key="NewPhpClassDialog/35.27.1565.873@35.27.1565.873" timestamp="1608808917630" />
     <state x="613" y="388" width="399" height="149" key="NewPhpFileDialog" timestamp="1608583337649">
       <screen x="35" y="27" width="1565" height="873" />
     </state>
     <state x="613" y="388" width="399" height="149" key="NewPhpFileDialog/35.27.1565.873@35.27.1565.873" timestamp="1608583337649" />
+<<<<<<< HEAD
     <state x="306" y="97" width="1147" height="768" key="SettingsEditor" timestamp="1608814087106">
       <screen x="35" y="27" width="1565" height="873" />
     </state>
+=======
+    <state x="430" y="233" width="1147" height="768" key="SettingsEditor" timestamp="1609600619323">
+      <screen x="0" y="0" width="3840" height="2160" />
+    </state>
+    <state x="430" y="233" key="SettingsEditor/0.0.3840.2160@0.0.3840.2160" timestamp="1609600619323" />
+>>>>>>> 5924d387084fe8597b41fd7abeedc54f9826007f
     <state x="306" y="97" width="1147" height="768" key="SettingsEditor/35.27.1565.873@35.27.1565.873" timestamp="1608814087106" />
     <state width="606" height="446" key="SwitcherDM" timestamp="1608328916649">
       <screen x="35" y="27" width="1565" height="873" />
     </state>
     <state width="606" height="446" key="SwitcherDM/35.27.1565.873@35.27.1565.873" timestamp="1608328916649" />
+<<<<<<< HEAD
     <state x="412" y="184" width="800" height="556" key="Vcs.Push.Dialog.v2" timestamp="1609425015405">
       <screen x="35" y="27" width="1565" height="873" />
     </state>
     <state x="412" y="184" width="800" height="556" key="Vcs.Push.Dialog.v2/35.27.1565.873@35.27.1565.873" timestamp="1609425015405" />
     <state x="135" y="125" width="1365" height="675" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1608076377803">
       <screen x="35" y="27" width="1565" height="873" />
+=======
+    <state x="881" y="102" width="808" height="555" key="Vcs.Push.Dialog.v2" timestamp="1610050731303">
+      <screen x="0" y="0" width="3840" height="2160" />
     </state>
+    <state x="881" y="102" width="808" height="555" key="Vcs.Push.Dialog.v2/0.0.3840.2160@0.0.3840.2160" timestamp="1610050731303" />
+    <state x="412" y="184" width="800" height="556" key="Vcs.Push.Dialog.v2/35.27.1565.873@35.27.1565.873" timestamp="1608076276042" />
+    <state x="1536" y="1064" width="2304" height="1065" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1609614733866">
+      <screen x="0" y="0" width="3840" height="2160" />
+>>>>>>> 5924d387084fe8597b41fd7abeedc54f9826007f
+    </state>
+    <state x="1536" y="1064" width="2304" height="1065" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.3840.2160@0.0.3840.2160" timestamp="1609614733866" />
     <state x="135" y="125" width="1365" height="675" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/35.27.1565.873@35.27.1565.873" timestamp="1608076377803" />
     <state x="135" y="125" width="1365" height="675" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1609027774516">
       <screen x="35" y="27" width="1565" height="873" />
@@ -414,14 +567,33 @@
       <screen x="35" y="27" width="1565" height="873" />
     </state>
     <state x="423" y="76" width="778" height="773" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/35.27.1565.873@35.27.1565.873" timestamp="1609052141503" />
-    <state x="383" y="148" width="1217" height="665" key="com.jetbrains.php.test.PhpNewTestDialog" timestamp="1609022796115">
-      <screen x="35" y="27" width="1565" height="873" />
+    <state x="2669" y="928" width="404" height="168" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1610051001696">
+      <screen x="0" y="0" width="3840" height="2160" />
     </state>
-    <state x="605" y="405" key="com.jetbrains.php.test.PhpNewTestDialog/0.0.3840.2160@0.0.3840.2160" timestamp="1607951082360" />
+    <state x="2669" y="928" width="404" height="168" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.3840.2160@0.0.3840.2160" timestamp="1610051001696" />
+    <state x="2256" y="761" width="853" height="555" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1609616221901">
+      <screen x="0" y="0" width="3840" height="2160" />
+    </state>
+    <state x="2256" y="761" width="853" height="555" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.3840.2160@0.0.3840.2160" timestamp="1609616221901" />
+    <state x="1379" y="-26" width="2455" height="2160" key="com.jetbrains.php.config.phpInfo.PhpInfo.PhpInfoDialog" timestamp="1609616190462">
+      <screen x="0" y="0" width="3840" height="2160" />
+    </state>
+    <state x="1379" y="-26" width="2455" height="2160" key="com.jetbrains.php.config.phpInfo.PhpInfo.PhpInfoDialog/0.0.3840.2160@0.0.3840.2160" timestamp="1609616190462" />
+    <state x="2227" y="568" width="958" height="770" key="com.jetbrains.php.test.PhpNewTestDialog" timestamp="1609599595840">
+      <screen x="0" y="0" width="3840" height="2160" />
+    </state>
+    <state x="2227" y="568" width="958" height="770" key="com.jetbrains.php.test.PhpNewTestDialog/0.0.3840.2160@0.0.3840.2160" timestamp="1609599595840" />
     <state x="383" y="148" width="1217" height="665" key="com.jetbrains.php.test.PhpNewTestDialog/35.27.1565.873@35.27.1565.873" timestamp="1609022796115" />
+<<<<<<< HEAD
     <state x="579" y="306" width="687" height="580" key="find.popup" timestamp="1609028323248">
       <screen x="35" y="27" width="1565" height="873" />
     </state>
+=======
+    <state x="1335" y="690" width="1686" height="1436" key="find.popup" timestamp="1610046047310">
+      <screen x="0" y="0" width="3840" height="2160" />
+    </state>
+    <state x="1335" y="690" width="1686" height="1436" key="find.popup/0.0.3840.2160@0.0.3840.2160" timestamp="1610046047310" />
+>>>>>>> 5924d387084fe8597b41fd7abeedc54f9826007f
     <state x="579" y="306" width="687" height="580" key="find.popup/35.27.1565.873@35.27.1565.873" timestamp="1609028323248" />
     <state x="596" y="235" width="432" height="455" key="refactoring.ChangeSignatureDialog" timestamp="1608723876918">
       <screen x="35" y="27" width="1565" height="873" />
@@ -431,10 +603,18 @@
       <screen x="35" y="27" width="1565" height="873" />
     </state>
     <state x="481" y="208" key="run.anything.popup/35.27.1565.873@35.27.1565.873" timestamp="1609253064111" />
+<<<<<<< HEAD
     <state x="928" y="229" width="672" height="275" key="search.everywhere.popup" timestamp="1609627221556">
       <screen x="35" y="27" width="1565" height="873" />
     </state>
     <state x="2543" y="501" width="672" height="678" key="search.everywhere.popup/0.0.3840.2160@0.0.3840.2160" timestamp="1607952174805" />
     <state x="928" y="229" width="672" height="275" key="search.everywhere.popup/35.27.1565.873@35.27.1565.873" timestamp="1609627221556" />
+=======
+    <state x="2543" y="501" width="672" height="678" key="search.everywhere.popup" timestamp="1610033804291">
+      <screen x="0" y="0" width="3840" height="2160" />
+    </state>
+    <state x="2543" y="501" width="672" height="678" key="search.everywhere.popup/0.0.3840.2160@0.0.3840.2160" timestamp="1610033804291" />
+    <state x="928" y="229" width="672" height="275" key="search.everywhere.popup/35.27.1565.873@35.27.1565.873" timestamp="1609030506326" />
+>>>>>>> 5924d387084fe8597b41fd7abeedc54f9826007f
   </component>
 </project>
