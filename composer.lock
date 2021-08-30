@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "26073f72fb26b98cfae1f801bf453f0a",
+    "content-hash": "957d02336db9e7058678ad2c71e7ce0c",
     "packages": [
         {
             "name": "bluerhinos/phpmqtt",
@@ -839,18 +839,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Gregwar/Image.git",
-                "reference": "68b4eddc45dacb3532e0fa16e5cb7d3937424a0c"
+                "reference": "c1390f5fafe2dfb4ba83a6c7bc56f75ea18c0311"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Gregwar/Image/zipball/68b4eddc45dacb3532e0fa16e5cb7d3937424a0c",
-                "reference": "68b4eddc45dacb3532e0fa16e5cb7d3937424a0c",
+                "url": "https://api.github.com/repos/Gregwar/Image/zipball/c1390f5fafe2dfb4ba83a6c7bc56f75ea18c0311",
+                "reference": "c1390f5fafe2dfb4ba83a6c7bc56f75ea18c0311",
                 "shasum": ""
             },
             "require": {
                 "ext-gd": "*",
                 "gregwar/cache": "^1.0.6",
-                "php": "^5.3 || ^7.0"
+                "php": "^5.6 || ^7.0 || ^8.0"
             },
             "require-dev": {
                 "sllh/php-cs-fixer-styleci-bridge": "~1.0",
@@ -882,7 +882,7 @@
                 "gd",
                 "image"
             ],
-            "time": "2020-03-31T17:33:39+00:00"
+            "time": "2021-02-17T15:57:20+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -1160,7 +1160,7 @@
             "dist": {
                 "type": "path",
                 "url": "../util",
-                "reference": "28959521115fa9026932533bd5f326fd8862602e"
+                "reference": "03f2f872f131c4bbec88b5efd928d3daa8c4ffc3"
             },
             "require": {
                 "ext-json": "^7.4",
@@ -1866,12 +1866,12 @@
             "source": {
                 "type": "git",
                 "url": "https://gitlab.com/NovumGit/innovation-app-core.git",
-                "reference": "17f7ff387926cd30e2f5ad87e5fc7e205e162169"
+                "reference": "8a8a02be28fa5fd6a075bf589a388250499e9cb9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://gitlab.com/api/v4/projects/NovumGit%2Finnovation-app-core/repository/archive.zip?sha=17f7ff387926cd30e2f5ad87e5fc7e205e162169",
-                "reference": "17f7ff387926cd30e2f5ad87e5fc7e205e162169",
+                "url": "https://gitlab.com/api/v4/projects/NovumGit%2Finnovation-app-core/repository/archive.zip?sha=8a8a02be28fa5fd6a075bf589a388250499e9cb9",
+                "reference": "8a8a02be28fa5fd6a075bf589a388250499e9cb9",
                 "shasum": ""
             },
             "require": {
@@ -1902,7 +1902,7 @@
                 "nette/php-generator": "^3.2",
                 "novum/code-generation": "*",
                 "paquettg/php-html-parser": "^1.7",
-                "php": "^7.4",
+                "php": "^7.4 || 8.0.*",
                 "php-console/php-console": "^3.1",
                 "phpfastcache/phpfastcache": "^6.0",
                 "propel/propel": "~2.0@dev",
@@ -1943,7 +1943,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2021-01-07T14:36:30+00:00"
+            "time": "2021-01-19T07:37:38+00:00"
         },
         {
             "name": "paquettg/php-html-parser",
@@ -2138,16 +2138,16 @@
         },
         {
             "name": "phpfastcache/phpfastcache",
-            "version": "6.1.4",
+            "version": "6.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPSocialNetwork/phpfastcache.git",
-                "reference": "63e1afc65d962b8dbafb68599cd9cb2767f53d72"
+                "reference": "cab4e79f1ad353302c82d7b73de0aa4b6b00144c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPSocialNetwork/phpfastcache/zipball/63e1afc65d962b8dbafb68599cd9cb2767f53d72",
-                "reference": "63e1afc65d962b8dbafb68599cd9cb2767f53d72",
+                "url": "https://api.github.com/repos/PHPSocialNetwork/phpfastcache/zipball/cab4e79f1ad353302c82d7b73de0aa4b6b00144c",
+                "reference": "cab4e79f1ad353302c82d7b73de0aa4b6b00144c",
                 "shasum": ""
             },
             "require": {
@@ -2231,7 +2231,17 @@
                 "zend memory cache",
                 "zend server"
             ],
-            "time": "2019-09-15T15:11:12+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/geolim4",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.patreon.com/geolim4",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2021-08-12T11:55:27+00:00"
         },
         {
             "name": "phpoffice/phpexcel",
@@ -6324,12 +6334,12 @@
             "version": "1.9.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/webmozart/assert.git",
+                "url": "https://github.com/webmozarts/assert.git",
                 "reference": "bafc69caeb4d49c39fd0779086c03a3738cbb389"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webmozart/assert/zipball/bafc69caeb4d49c39fd0779086c03a3738cbb389",
+                "url": "https://api.github.com/repos/webmozarts/assert/zipball/bafc69caeb4d49c39fd0779086c03a3738cbb389",
                 "reference": "bafc69caeb4d49c39fd0779086c03a3738cbb389",
                 "shasum": ""
             },
@@ -6377,7 +6387,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.4",
+        "php": "^7.4 || 8.0.*",
         "ext-dom": "*",
         "ext-pdo": "*",
         "ext-sockets": "*",
